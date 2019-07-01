@@ -14,7 +14,7 @@ import Promocao from '../screens/Promocao';
 
 const NavBar = (props) => {
     return (
-        <Router>
+        <div>
             <Navbar bg="light" expand="lg">
                 <img
                     alt=""
@@ -27,20 +27,19 @@ const NavBar = (props) => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/consulta">Consulta</Nav.Link>
-                        <Nav.Link href="/perfil">Perfil</Nav.Link>
-                        <Nav.Link href="/promocao">Promoção</Nav.Link>
+                        {/* <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="/consulta">Consulta</Nav.Link>
+                            <Nav.Link href="/perfil">Perfil</Nav.Link>
+                            <Nav.Link href="/promocao">Promoção</Nav.Link> */}
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#consulta">Consulta</Nav.Link>
+                        <Nav.Link href="#perfil">Perfil</Nav.Link>
+                        <Nav.Link href="#promocao">Promoção</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            <Switch>
-                <Route exact path='/' component={Home} />
-                <Route path='/consulta' component={Consulta} />
-                <Route path='/perfil' component={Perfil} />
-                <Route path='/promocao' component={Promocao} />
-            </Switch>
-        </Router>
+        </div>
+
     );
 };
 
