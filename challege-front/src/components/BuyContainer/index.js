@@ -5,6 +5,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import CardUser from '../CardUser';
 import BuyConsult from '../BuyConsult';
 
+import './BuyContainer.css';
+
 //REDUX
 import { connect } from 'react-redux';
 import {

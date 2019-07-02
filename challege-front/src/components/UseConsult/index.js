@@ -9,8 +9,9 @@ import {
 const UseConsult = (props) => {
 
     function UseConsult() {
-        props.modificaDispConsult(parseInt(props.disp_consults) - 1)
-        
+        props.modificaDispConsult(parseInt(props.disp_consults) - 1);
+        props.modificaNumConsult(parseInt(props.num_consults) + 1);
+
     }
 
     return (

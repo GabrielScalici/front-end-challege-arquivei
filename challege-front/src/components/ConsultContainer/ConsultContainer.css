@@ -2,6 +2,13 @@
     padding: 40px;
     justify-content: center;
     align-items: center;
+}
+
+.white{
+    background-color: #fff;
+}
+
+.grey{
     background-color: #f3f3f3;
 }
 

@@ -6,6 +6,7 @@ import './ConsultContainer.css';
 //COMPONENTES
 import CountConsult from '../CountConsult';
 import UseConsult from '../UseConsult';
+import DividerLine from '../DividerLine';
 
 //REDUX
 import { connect } from 'react-redux';
@@ -16,16 +17,27 @@ import {
 class ConsultContainer extends Component {
     render() {
         return (
-            <Container sm={12} md={12} className="Container-card margin">
-                <Row sm={12} md={12}>
+            <Container>
+                <Row sm={12} md={12} className="Container-card grey margin">
                     <Col sm={12} md={5} className="margin">
                         <CountConsult
-                            last_consult={this.props.last_consult}
-                            disp_consults={this.props.disp_consults}
+                            count={this.props.disp_consults}
+                            title="Disponíveis"
                         />
                     </Col>
                     <Col sm={12} md={5} className="margin">
-                        <UseConsult/>
+                        <CountConsult
+                            count={this.props.num_consults}
+                            title="Efetuadas"
+                        />
+                    </Col>
+                </Row>
+                <Row className="Container-card white margin">
+                    <DividerLine title="Realizar consulta"/>
+                </Row>
+                <Row sm={12} md={12} className="Container-card white margin">
+                    <Col sm={12} md={12} className="margin">
+                        <UseConsult />
                     </Col>
                 </Row>
             </Container>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Tab, Tabs } from 'react-bootstrap'; 
+import { Container, Tab, Tabs } from 'react-bootstrap';
 
 //FIREBASE
 import { db } from '../utils/firebase';
@@ -57,13 +57,16 @@ class Perfil extends Component {
                     <Tabs defaultActiveKey="perfil" id="uncontrolled-tab-example">
                         <Tab eventKey="perfil" title="Perfil">
                             <FormPerfil />
-                            <DividerLine title="Usuário Cadastrado"/>
+                            <DividerLine title="Usuário Cadastrado" />
                         </Tab>
                         <Tab eventKey="card" title="Cartões">
                             <FormCard />
                             <DividerLine title="Cartão Cadastrado" />
                         </Tab>
                     </Tabs>
+                </div>
+                <div class="ui segment">
+                    <p></p>
                 </div>
             </Container>
         );
