@@ -8,16 +8,16 @@ const INITIAL_STATE = {
 
 export default(state = INITIAL_STATE, action) => {
     //IDENTIFICANDO ACTION
-    if(action.type == 'MODIFICA_NAME_CARD'){
+    if(action.type === 'MODIFICA_NAME_CARD'){
         return { ...state, name_card: action.payload }
     }
-    if(action.type == 'MODIFICA_NUM_CARD'){
+    if(action.type === 'MODIFICA_NUM_CARD'){
         return { ...state, num_card: action.payload }
     }
-    if(action.type == 'MODIFICA_VALID_CARD'){
+    if(action.type === 'MODIFICA_VALID_CARD'){
         return { ...state, valid_card: action.payload }
     }
-    if(action.type == 'MODIFICA_CVV_CARD'){
+    if(action.type === 'MODIFICA_CVV_CARD'){
         return { ...state, cvv_card: action.payload }
     }
 
