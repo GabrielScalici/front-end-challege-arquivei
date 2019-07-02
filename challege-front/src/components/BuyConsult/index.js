@@ -3,6 +3,7 @@ import React from 'react';
 //COMPONENTES
 import PriceConsults from '../PriceConsults';
 import { data } from '../DataAtual';
+import { sale } from '../Sale';
 
 //FIREBASE
 import { db } from '../../utils/firebase';
@@ -18,6 +19,7 @@ const BuyConsult = (props) => {
 
     function UpdateValues() {
         props.modificaDispConsult(parseInt(props.disp_consults) + parseInt(props.quant_compra));
+        props.modificaNumConsult(parseInt(props.num_consults) + parseInt(props.quant_compra));
         console.log("Quantidade disponivel" + props.disp_consults);
     }
 
@@ -30,11 +32,11 @@ const BuyConsult = (props) => {
             VALOR: '0,00'
         });
 
-        UpdateValues();
-
+        
         //ALERTA SIMPLES DE CONCLUSÃO
-        alert("Compra realizada com sucesso");
-
+        alert("Valor pagar: " + sale(props.num_consults, props.quant_compra));
+        
+        //UpdateValues();
     }
 
     return (
