@@ -1,6 +1,9 @@
 import React from 'react';
-import { CheckCnpj } from '../CheckCnpj';
+import { Container } from 'react-bootstrap';
+//import { CheckCnpj } from '../CheckCnpj';
 
+//FIREBASE
+import { db } from '../../utils/firebase';
 
 //REDUX
 import { connect } from 'react-redux';
@@ -10,41 +13,53 @@ import {
 
 //import '../../Styles.css';
 import './FormPerfil.css';
-import { Container, Form, Button } from 'react-bootstrap';
 
 const FormPerfil = (props) => {
-    console.log(props);
+
+    function addUser() {
+        //ADICIONANDO NO BANCO DE DADOS FIREBASE
+        db.ref('/USER').push({
+            NAME: props.name_user,
+            EMAIL: props.email_user,
+            CNPJ: props.cnpj_user,
+        });
+
+        //ALERTA SIMPLES DE CONCLUSÃO
+        alert("Usuário cadastrado com sucesso!");
+
+    }
 
     return (
-        <Container className="Container-form" >
-            <form className="ui form">
-                <div className="field">
-                    <label>Nome</label>
-                    <input type="text" name="name" placeholder="Nome Completo" value={props.name_user}
-                        onChange={text => props.modificaNameUser(text.target.value)}
-                    />
-                </div>
-                <div className="field">
-                    <label>E-mail</label>
-                    <input type="email" name="email" placeholder="E-mail" value={props.email_user}
-                        onChange={text => props.modificaEmailUser(text.target.value)}
-                    />
-                </div>
-                <div className="field">
-                    <label>CNPJ</label>
-                    <input type="text" name="cnpj" placeholder="CNPJ" value={props.cnpj_user}
-                        onChange={text => {
-                            if (CheckCnpj(text)) {
+        <div>
+            <h2> Informações pessoais </h2>
+            <Container className="Container-form" >
+                <form className="ui form">
+                    <div className="field">
+                        <label>Nome</label>
+                        <input type="text" name="name" placeholder="Nome Completo" value={props.name_user}
+                            onChange={text => props.modificaNameUser(text.target.value)}
+                        />
+                    </div>
+                    <div className="field">
+                        <label>E-mail</label>
+                        <input type="email" name="email" placeholder="E-mail" value={props.email_user}
+                            onChange={text => props.modificaEmailUser(text.target.value)}
+                        />
+                    </div>
+                    <div className="field">
+                        <label>CNPJ</label>
+                        <input type="text" name="cnpj" placeholder="CNPJ" value={props.cnpj_user}
+                            onChange={text => {
                                 props.modificaCnpjUser(text.target.value)
-                            }
-                        }}
-                    />
-                </div>
-                <button className="ui button" type="submit"
-                    onClick={() => { }}
-                > Salvar </button>
-            </form>
-        </Container>
+                            }}
+                        />
+                    </div>
+                    <button className="ui button"
+                        onClick={() => addUser()}
+                    > Salvar </button>
+                </form>
+            </Container>
+        </div>
     );
 };
 

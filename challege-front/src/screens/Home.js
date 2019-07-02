@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Image, Container, Row, Col } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 
 //COMPONENTES
-//import NavBar from '../components/NavBar';
+
 
 //IMAGENS
 import logo_completo from '../images/logo_completo.png'
@@ -17,8 +17,6 @@ class Home extends Component {
                 <div className="">
                     <Image className="margin-default" fluid src={logo_completo} />
                 </div>
-
-                <p className="Title"> HOME </p>
             </div>
         );
     }

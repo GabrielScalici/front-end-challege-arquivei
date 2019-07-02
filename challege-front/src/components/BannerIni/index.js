@@ -1,12 +1,12 @@
 import React from 'react';
 
-//import '../../Style.css';
+import './BannerIni.css';
 
 
 const BannerIni = (props) => {
     return (
         <div>
-            <h1 className="primary"> {props.title} </h1>
+            <h1 className="Title"> {props.title} </h1>
         </div>
 
     );

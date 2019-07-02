@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Home from './screens/Home';
-import Consulta from './screens/Consulta';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
@@ -12,7 +10,7 @@ import { store, persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 
 //ROTAS
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 //BOOSTRAP PARA COMPONENTES PRONTOS
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
