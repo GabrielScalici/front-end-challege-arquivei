@@ -1,0 +1,29 @@
+ 
+
+
+
+/* PADRAO EXIGIDO */
+
+.primary {
+    color: #4076FA;
+}
+
+.success{
+    color: #00D233;
+}
+
+.error{
+    color: #F15025;
+}
+
+.alert{
+    color: #E8C547;
+}
+
+.dark{
+    color: #001634;
+}
+
+.extra-dark{
+    color: #091223;
+}

@@ -15,7 +15,9 @@ class Consulta extends Component {
         return (
             <div className="Container">
                 <NavBar />
-                <BannerIni title="Consulta" />
+
+                <BannerIni title="Consulta"/>
+                
                 <div className="Tabs">
                     <Tabs defaultActiveKey="consulta" id="uncontrolled-tab-example">
                         <Tab eventKey="consulta" title="Consultar">

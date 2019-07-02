@@ -5,10 +5,10 @@ import { Image, Container, Row, Col } from 'react-bootstrap';
 import NavBar from '../components/NavBar';
 
 //IMAGENS
-import logo_completo from '../images/logo_complete.png'
+import logo_completo from '../images/logo_completo.png'
 
 //CSS
-import './Home.css';
+import '../Styles.css';
 
 class Home extends Component {
     render() {
