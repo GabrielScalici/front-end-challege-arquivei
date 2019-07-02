@@ -30,10 +30,37 @@ class HistoryContainer extends Component {
                                 <img className="ui avatar image" src={note} />
                                 <div className="content">
                                     Lena
-                        </div>
+                                </div>
                             </div>
                         );
                     })}
+                    <div className="item">
+                                <div className="right floated content">
+                                    <div className="ui button">Add</div>
+                                </div>
+                                <img className="ui avatar image" src={note} />
+                                <div className="content">
+                                    Lena
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="right floated content">
+                                    <div className="ui button">Add</div>
+                                </div>
+                                <img className="ui avatar image" src={note} />
+                                <div className="content">
+                                    Lena
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="right floated content">
+                                    <div className="ui button">Add</div>
+                                </div>
+                                <img className="ui avatar image" src={note} />
+                                <div className="content">
+                                    Lena
+                                </div>
+                            </div>
                 </div>
             </div>
         );

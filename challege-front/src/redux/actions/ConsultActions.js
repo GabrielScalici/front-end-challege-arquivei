@@ -33,3 +33,12 @@ export const modificaLastConsult = (text) => {
         payload: text,
     }
 }
+
+export const modificaQuantCompra = (text) => {
+    //RETORNA UMA ACTION
+    console.log(text);
+    return{
+        type: 'MODIFICA_QUANT_COMPRA',
+        payload: text,
+    }
+}

@@ -4,6 +4,7 @@ const INITIAL_STATE = {
     num_consults: 0,
     disp_consults: 0,
     last_consult: '',
+    quant_compra: 0,
 }
 
 export default(state = INITIAL_STATE, action) => {
@@ -19,6 +20,9 @@ export default(state = INITIAL_STATE, action) => {
     }
     if(action.type === 'MODIFICA_LAST_CONSULTS'){
         return { ...state, last_consult: action.payload }
+    }
+    if(action.type === 'MODIFICA_QUANT_COMPRA'){
+        return { ...state, quant_compra: action.payload }
     }
 
     return state;

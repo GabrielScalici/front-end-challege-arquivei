@@ -2,8 +2,41 @@ import React from 'react';
 
 //COMPONENTES
 import PriceConsults from '../PriceConsults';
+import { data } from '../DataAtual';
+
+//FIREBASE
+import { db } from '../../utils/firebase';
+
+//REDUX
+import { connect } from 'react-redux';
+import {
+    modificaConsult, modificaDispConsult, modificaNumConsult, modificaQuantCompra
+} from '../../redux/actions/ConsultActions';
+
 
 const BuyConsult = (props) => {
+
+    function UpdateValues() {
+        props.modificaDispConsult(props.disp_consults + props.quant_compra);
+        console.log("Quantidade disponivel" + props.disp_consults);
+    }
+
+
+    function addCompra() {
+        //ADICIONANDO NO BANCO DE DADOS FIREBASE
+        db.ref('/COMPRA').push({
+            QUANTIDADE: props.quant_compra,
+            DATA: data(),
+            VALOR: '0,00'
+        });
+
+        UpdateValues();
+
+        //ALERTA SIMPLES DE CONCLUSÃO
+        alert("Compra realizada com sucesso");
+
+    }
+
     return (
         <div>
             <div className="ui card">
@@ -21,17 +54,23 @@ const BuyConsult = (props) => {
                         </div>
                     </div>
                 </div>
-                <form className="ui form">
+                <div className="ui form">
                     <div className="field">
                         <label>Quantidade</label>
-                        <input type="number" name="name" placeholder="Digite o número da nota" />
+                        <input type="number" name="name" placeholder="Digite o número da nota"
+                            onChange={(text) => {
+                                props.modificaQuantCompra(text.target.value)
+                            }}
+                        />
                     </div>
                     <div className="extra content">
-                        <button type="submit" className="ui button Button-consult"> Comprar </button>
+                        <button className="ui button Button-consult"
+                            onClick={() => {addCompra()}}
+                        > Comprar </button>
                     </div>
-                </form>
+                </div>
             </div>
-            <PriceConsults 
+            <PriceConsults
                 quantidade="3000"
                 valor="R$: 10,00"
             />
@@ -40,4 +79,16 @@ const BuyConsult = (props) => {
     );
 };
 
-export default BuyConsult;
+//USANDO REDUX
+const mapStateToProps = state => (
+    {
+        consult: state.ConsultReducer.consult,
+        num_consults: state.ConsultReducer.num_consults,
+        disp_consults: state.ConsultReducer.disp_consults,
+        quant_compra: state.ConsultReducer.quant_compra,
+
+    }
+)
+export default connect(mapStateToProps, {
+    modificaConsult, modificaDispConsult, modificaNumConsult, modificaQuantCompra,
+})(BuyConsult);

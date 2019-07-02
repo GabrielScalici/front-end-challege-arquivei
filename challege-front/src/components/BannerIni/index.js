@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../Styles.css';
+//import '../../Style.css';
 
 
 const BannerIni = (props) => {
