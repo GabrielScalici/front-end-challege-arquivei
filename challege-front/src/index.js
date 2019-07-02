@@ -8,7 +8,8 @@ import * as serviceWorker from './serviceWorker';
 
 //REDUX
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import { store, persistor } from './redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 //ROTAS
 import { BrowserRouter, Route } from 'react-router-dom'
@@ -19,7 +20,9 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 ReactDOM.render(
     <BrowserRouter>
         <Provider store={store}>
-            <App />
+            <PersistGate loading={null} persistor={persistor}>
+                <App />
+            </PersistGate>
         </Provider>
     </BrowserRouter>
     , document.getElementById('root'));
