@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+//CSS
+import '../Styles.css';
+
 //COMPONENTES
 import NavBar from '../components/NavBar';
 

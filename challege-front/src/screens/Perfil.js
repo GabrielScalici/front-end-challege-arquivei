@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
 
+//CSS
+import '../Styles.css';
+
 //COMPONENTES
-import NavBar from '../components/NavBar';
+import BannerIni from '../components/BannerIni';
 
 class Perfil extends Component {
     render() {
         return (
-            <div className="App">
-                <NavBar />
-                <p> Perfil </p>
+            <div className="Container">
+                <BannerIni title="Perfil" />
             </div>
         );
     }

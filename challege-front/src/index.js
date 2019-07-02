@@ -3,7 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './screens/Home';
 import Consulta from './screens/Consulta';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+//REDUX
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 //ROTAS
 import { BrowserRouter, Route } from 'react-router-dom'
@@ -13,7 +18,9 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
     <BrowserRouter>
-        <Consulta />
+        <Provider store={store}>
+            <App />
+        </Provider>
     </BrowserRouter>
     , document.getElementById('root'));
 

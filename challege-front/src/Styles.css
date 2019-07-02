@@ -1,4 +1,14 @@
- 
+.Container{
+    flex:1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.Banner-title{
+    background-color: #4076FA;
+    color: white;
+}
 
 
 
@@ -26,4 +36,8 @@
 
 .extra-dark{
     color: #091223;
+}
+
+.margin-default{
+    margin: 40px;
 }

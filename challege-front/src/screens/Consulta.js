@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { Tabs, Tab, } from 'react-bootstrap';
 
 //CSS
-import './Consulta.css';
+import '../Styles.css';
 
 //COMPONENTES
-import NavBar from '../components/NavBar';
 import BannerIni from '../components/BannerIni';
 
 
@@ -14,11 +13,9 @@ class Consulta extends Component {
     render() {
         return (
             <div className="Container">
-                <NavBar />
-
                 <BannerIni title="Consulta"/>
                 
-                <div className="Tabs">
+                <div>
                     <Tabs defaultActiveKey="consulta" id="uncontrolled-tab-example">
                         <Tab eventKey="consulta" title="Consultar">
                             <p> prmeiro </p>
