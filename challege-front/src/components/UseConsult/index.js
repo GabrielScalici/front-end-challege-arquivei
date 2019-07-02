@@ -26,7 +26,7 @@ const UseConsult = (props) => {
             <form className="ui form">
                 <div className="field">
                     <label>Número para consulta</label>
-                    <input type="text" name="name" placeholder="Nome escrito no cartão" />
+                    <input type="text" name="name" placeholder="Digite o número da nota" />
                 </div>
                 <div className="extra content">
                     <button type="submit" className="ui button Button-consult"> Consultar </button>
