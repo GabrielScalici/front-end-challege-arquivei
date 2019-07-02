@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card, Button } from 'react-bootstrap';
 
 //REDUX
 import { connect } from 'react-redux';
@@ -9,39 +10,26 @@ import {
 const UseConsult = (props) => {
 
     function UseConsult() {
-        props.modificaDispConsult(parseInt(props.disp_consults) - 1);
-        props.modificaNumConsult(parseInt(props.num_consults) + 1);
-
+        if (props.disp_consults <= 0) {
+            alert("Desculpe, você precisa recarregar suas consultas");
+        } else {
+            alert("Consulta realizada com sucesso");
+            props.modificaDispConsult(parseInt(props.disp_consults) - 1);
+            props.modificaNumConsult(parseInt(props.num_consults) + 1);
+        }
     }
 
     return (
-        <div className="ui card">
-            <div className="content">
-                <div className="header">Consultar</div>
-            </div>
-            <div className="content">
-                <div className="ui small feed">
-                    <div className="event">
-                        <div className="content">
-                            <div className="summary">
-                                Você possui já consultou {props.num_consults} vezes.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <form className="ui form">
-                <div className="field">
-                    <label>Número para consulta</label>
-                    <input type="text" name="name" placeholder="Digite o número da nota" />
-                </div>
-                <div className="extra content">
-                    <button type="submit" className="ui button Button-consult"
-                        onClick={ () =>  UseConsult()}
-                    > Consultar </button>
-                </div>
-            </form>
-        </div>
+        <Card className="text-center">
+            <Card.Header>Consultar</Card.Header>
+            <Card.Body>
+                <Card.Title> Nota fisca eletrônica</Card.Title>
+                <Card.Text>
+                    (Lógica para realizar a consulta)
+                </Card.Text>
+                <Button onClick={() => UseConsult()} variant="primary">Consultar</Button>
+            </Card.Body>
+        </Card>
     );
 }
 

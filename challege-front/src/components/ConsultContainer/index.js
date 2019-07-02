@@ -22,24 +22,22 @@ class ConsultContainer extends Component {
                     <Col sm={12} md={5} className="margin">
                         <CountConsult
                             count={this.props.disp_consults}
-                            title="Disponíveis"
+                            title="Consultas Disponíveis"
                         />
                     </Col>
                     <Col sm={12} md={5} className="margin">
                         <CountConsult
                             count={this.props.num_consults}
-                            title="Efetuadas"
+                            title="Consultas Efetuadas"
                         />
                     </Col>
                 </Row>
                 <Row className="Container-card white margin">
-                    <DividerLine title="Realizar consulta"/>
+                    <DividerLine icon="thumbtack" title="Realizar consulta" />
                 </Row>
-                <Row sm={12} md={12} className="Container-card white margin">
-                    <Col sm={12} md={12} className="margin">
-                        <UseConsult />
-                    </Col>
-                </Row>
+
+                <UseConsult />
+
             </Container>
         );
     }

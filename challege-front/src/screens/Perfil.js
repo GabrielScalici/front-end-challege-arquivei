@@ -12,6 +12,8 @@ import BannerIni from '../components/BannerIni';
 import FormPerfil from '../components/FormPerfil';
 import FormCard from '../components/FormCard';
 import DividerLine from '../components/DividerLine';
+import UserRegister from '../components/UserRegister';
+import CardRegister from '../components/CardRegister';
 
 class Perfil extends Component {
     constructor(props) {
@@ -56,17 +58,22 @@ class Perfil extends Component {
                 <div>
                     <Tabs defaultActiveKey="perfil" id="uncontrolled-tab-example">
                         <Tab eventKey="perfil" title="Perfil">
+                            <div class="ui segment">
+                                <DividerLine icon="user" title="Usuário Cadastrado" />
+                                <UserRegister />
+                            </div>
+                            <DividerLine simple />
                             <FormPerfil />
-                            <DividerLine title="Usuário Cadastrado" />
                         </Tab>
                         <Tab eventKey="card" title="Cartões">
+                            <div class="ui segment">
+                                <DividerLine icon="user" title="Cartão Cadastrado" />
+                                <CardRegister />
+                            </div>
                             <FormCard />
-                            <DividerLine title="Cartão Cadastrado" />
+
                         </Tab>
                     </Tabs>
-                </div>
-                <div class="ui segment">
-                    <p></p>
                 </div>
             </Container>
         );
