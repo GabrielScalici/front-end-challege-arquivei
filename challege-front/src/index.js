@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './screens/Home';
+import Consulta from './screens/Consulta';
 import * as serviceWorker from './serviceWorker';
 
 //ROTAS
@@ -12,7 +13,7 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
     <BrowserRouter>
-        <Home />
+        <Consulta />
     </BrowserRouter>
     , document.getElementById('root'));
 

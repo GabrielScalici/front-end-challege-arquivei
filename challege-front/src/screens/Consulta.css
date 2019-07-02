@@ -1,0 +1,16 @@
+.Container {
+    text-align: center;
+    flex: 1;
+    background-color: '#4076FA';
+}
+
+.Header-app {
+    
+    height: 200px;
+}
+
+.Tabs {
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+}
