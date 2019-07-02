@@ -40,6 +40,9 @@ const FormCard = (props) => {
                                             props.modificaValidCard(text.target.value)
                                         }}
                                     />
+                                    <div class="ui pointing red basic label">
+                                        Não precisa digitar a barra
+                                    </div>
                                 </div>
                             </Col>
                             <Col>

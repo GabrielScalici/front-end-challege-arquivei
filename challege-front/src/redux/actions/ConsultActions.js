@@ -15,3 +15,12 @@ export const modificaNumConsult = (text) => {
         payload: text,
     }
 }
+
+export const modificaDispConsult = (text) => {
+    //RETORNA UMA ACTION
+    console.log(text);
+    return{
+        type: 'MODIFICA_DISP_CONSULTS',
+        payload: text,
+    }
+}

@@ -6,29 +6,30 @@ import '../Styles.css';
 
 //COMPONENTES
 import BannerIni from '../components/BannerIni';
-
+import BuyContainer from '../components/BuyContainer';
+import ConsultContainer from '../components/ConsultContainer';
+import HistoryContainer from '../components/HistoryContainer';
 
 
 class Consulta extends Component {
     render() {
         return (
             <div className="Container">
-                <BannerIni title="Consulta"/>
-                
+                <BannerIni title="Consulta" />
+
                 <div>
                     <Tabs defaultActiveKey="consulta" id="uncontrolled-tab-example">
                         <Tab eventKey="consulta" title="Consultar">
-                            <p> prmeiro </p>
+                            <ConsultContainer />
                         </Tab>
                         <Tab eventKey="comprar" title="Comprar">
-                            <p> segundo </p>
+                            <BuyContainer />
                         </Tab>
                         <Tab eventKey="historico" title="Histórico">
-                            <p> terceiro </p>
+                            <HistoryContainer />
                         </Tab>
                     </Tabs>
                 </div>
-                <p> CONSULTA </p>
             </div>
         );
     }
