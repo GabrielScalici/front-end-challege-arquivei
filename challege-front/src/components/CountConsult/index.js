@@ -15,15 +15,15 @@ const CountConsult = (props) => {
                         Você tem
                     </div>
                     <div className="value">
-                        40,509
+                        {props.disp_consults}
                     </div>
                     <div className="label">
                         Consultas Disponíveis
                     </div>
-                    <div>
+                    {/* <div>
                         <span> Última consulta em:</span>
                         <span>{props.last_consult}</span>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

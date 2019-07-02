@@ -1,5 +1,6 @@
 import React from 'react';
 import Cards from 'react-credit-cards';
+import { Container } from 'react-bootstrap'
 import 'react-credit-cards/es/styles-compiled.css';
 
 //REDUX
@@ -11,13 +12,14 @@ import {
 
 const CardUser = (props) => {
     return (
-
-        <Cards
-            number={props.num_card}
-            name={props.name_card}
-            expiry={props.valid_card}
-            cvc={props.cvv_card}
-        />
+        <Container sm={12}>
+            <Cards
+                number={props.num_card}
+                name={props.name_card}
+                expiry={props.valid_card}
+                cvc={props.cvv_card}
+            />
+        </Container>
     );
 };
 

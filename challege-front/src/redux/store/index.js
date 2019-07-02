@@ -16,6 +16,8 @@ const store = createStore(persistedReducer);
 
 const persistor = persistStore(store);
 
+//persistor.purge();
+
 export { store, persistor };
 
 // const store = createStore(reducers);

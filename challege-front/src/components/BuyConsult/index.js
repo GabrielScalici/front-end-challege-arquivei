@@ -17,7 +17,7 @@ import {
 const BuyConsult = (props) => {
 
     function UpdateValues() {
-        props.modificaDispConsult(props.disp_consults + props.quant_compra);
+        props.modificaDispConsult(parseInt(props.disp_consults) + parseInt(props.quant_compra));
         console.log("Quantidade disponivel" + props.disp_consults);
     }
 

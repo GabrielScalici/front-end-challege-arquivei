@@ -7,6 +7,12 @@ import {
 } from '../../redux/actions/ConsultActions';
 
 const UseConsult = (props) => {
+
+    function UseConsult() {
+        props.modificaDispConsult(parseInt(props.disp_consults) - 1)
+        
+    }
+
     return (
         <div className="ui card">
             <div className="content">
@@ -29,7 +35,9 @@ const UseConsult = (props) => {
                     <input type="text" name="name" placeholder="Digite o número da nota" />
                 </div>
                 <div className="extra content">
-                    <button type="submit" className="ui button Button-consult"> Consultar </button>
+                    <button type="submit" className="ui button Button-consult"
+                        onClick={ () =>  UseConsult()}
+                    > Consultar </button>
                 </div>
             </form>
         </div>
