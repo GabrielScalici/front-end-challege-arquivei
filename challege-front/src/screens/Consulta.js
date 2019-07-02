@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Tabs, Tab, } from 'react-bootstrap';
+import { Tabs, Tab, Container, } from 'react-bootstrap';
 
 //CSS
 import '../Styles.css';
@@ -14,7 +14,7 @@ import HistoryContainer from '../components/HistoryContainer';
 class Consulta extends Component {
     render() {
         return (
-            <div className="Container">
+            <Container className="Container">
                 <BannerIni title="Consulta" />
 
                 <div>
@@ -30,7 +30,7 @@ class Consulta extends Component {
                         </Tab>
                     </Tabs>
                 </div>
-            </div>
+            </Container>
         );
     }
 }

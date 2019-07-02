@@ -24,3 +24,12 @@ export const modificaDispConsult = (text) => {
         payload: text,
     }
 }
+
+export const modificaLastConsult = (text) => {
+    //RETORNA UMA ACTION
+    console.log(text);
+    return{
+        type: 'MODIFICA_LAST_CONSULTS',
+        payload: text,
+    }
+}
