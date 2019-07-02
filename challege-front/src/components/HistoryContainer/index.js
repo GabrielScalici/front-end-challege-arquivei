@@ -13,17 +13,27 @@ class HistoryContainer extends Component {
     render() {
         return (
             <div>
-                <h2> Histórico de compras </h2>
-                <div class="ui huge aligned divided list">
-                    <div class="item">
-                        <div class="right floated content">
-                            <div class="ui button">Add</div>
-                        </div>
-                        <img class="ui avatar image" src={note} />
-                        <div class="content">
-                            Lena
-                        </div>
+                <h2 className="ui icon header">
+                    <i className="clone icon"></i>
+                    <div className="content">
+                        Histórico
+                        <div className="sub header">Relatório completo das compras efetuadas no site</div>
                     </div>
+                </h2>
+                <div className="ui huge aligned divided list">
+                    {this.props.consult.map((item, index) => {
+                        return (
+                            <div className="item">
+                                <div className="right floated content">
+                                    <div className="ui button">Add</div>
+                                </div>
+                                <img className="ui avatar image" src={note} />
+                                <div className="content">
+                                    Lena
+                        </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         );
