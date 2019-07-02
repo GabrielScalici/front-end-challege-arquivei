@@ -1,0 +1,16 @@
+.Container-card{
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f3;
+}
+
+.Button-consult{
+    margin: 40px;
+}
+
+.margin{
+    margin: auto;
+    display: flex;
+    align-items: center 
+}

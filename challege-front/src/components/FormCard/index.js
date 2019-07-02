@@ -1,7 +1,7 @@
 import React from 'react';
-import Cards from 'react-credit-cards';
 
-import 'react-credit-cards/es/styles-compiled.css';
+//COMPONENTES
+import CardUser from '../CardUser';
 
 //REDUX
 import { connect } from 'react-redux';
@@ -17,7 +17,7 @@ const FormCard = (props) => {
     return (
         <Container className="Container-form" >
             <Row>
-                <Col md={6} sm={12}>
+                <Col sm={12} md={6} >
                     <form className="ui form">
                         <div className="field">
                             <label>Nome</label>
@@ -40,7 +40,7 @@ const FormCard = (props) => {
                                             props.modificaValidCard(text.target.value)
                                         }}
                                     />
-                                    <div class="ui pointing red basic label">
+                                    <div className="ui pointing red basic label">
                                         Não precisa digitar a barra
                                     </div>
                                 </div>
@@ -62,13 +62,8 @@ const FormCard = (props) => {
                         > Salvar </button>
                     </form>
                 </Col>
-                <Col md={6} sm={12}>
-                    <Cards
-                        number={props.num_card}
-                        name={props.name_card}
-                        expiry={props.valid_card}
-                        cvc={props.cvv_card}
-                    />
+                <Col sm={12}md={6}>
+                    <CardUser/>
                 </Col>
             </Row>
 

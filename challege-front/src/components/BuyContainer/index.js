@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
 //REDUX
 import { connect } from 'react-redux';
@@ -9,9 +10,16 @@ import {
 class BuyContainer extends Component {
     render() {
         return (
-            <div>
-                <p> BUY </p>
-            </div>
+            <Container sm={12} md={12} className="Container-card margin">
+                <Row sm={12} md={12}>
+                    <Col sm={12} md={5} className="margin">
+                        
+                    </Col>
+                    <Col sm={12} md={5} className="margin">
+                        
+                    </Col>
+                </Row>
+            </Container>
         );
     }
 }
