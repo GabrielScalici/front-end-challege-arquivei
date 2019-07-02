@@ -8,15 +8,15 @@ import {
 
 const UseConsult = (props) => {
     return (
-        <div class="ui card">
-            <div class="content">
-                <div class="header">Consultar</div>
+        <div className="ui card">
+            <div className="content">
+                <div className="header">Consultar</div>
             </div>
-            <div class="content">
-                <div class="ui small feed">
-                    <div class="event">
-                        <div class="content">
-                            <div class="summary">
+            <div className="content">
+                <div className="ui small feed">
+                    <div className="event">
+                        <div className="content">
+                            <div className="summary">
                                 Você possui já consultou {props.num_consults} vezes.
                             </div>
                         </div>
@@ -28,8 +28,8 @@ const UseConsult = (props) => {
                     <label>Número para consulta</label>
                     <input type="text" name="name" placeholder="Nome escrito no cartão" />
                 </div>
-                <div class="extra content">
-                    <button type="submit" class="ui button Button-consult"> Consultar </button>
+                <div className="extra content">
+                    <button type="submit" className="ui button Button-consult"> Consultar </button>
                 </div>
             </form>
         </div>
