@@ -17,26 +17,6 @@ import {
 class BuyContainer extends Component {
     render() {
         return (
-            // <Container>
-            //     <Row sm={12} md={12}>
-            //         <Col sm={12} md={12} className="margin">
-            //             <div>
-            //                 <p> Comprar Crédito: </p>
-            //                 <BuyConsult />
-            //             </div>
-            //         </Col>
-            //     </Row>
-            //     <Row sm={12} md={12}>
-            //         <Col sm={12} md={12} className="margin">
-            //             <div>
-            //                 <p> Cartão de crédito registrado: </p>
-            //                 <CardUser />
-            //             </div>
-            //         </Col>
-            //     </Row>
-
-            // </Container>
-
             <Container>
                 <Row sm={12} md={12} className="Container-card grey margin">
                     <Col sm={12} md={5} className="margin">

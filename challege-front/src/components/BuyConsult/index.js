@@ -16,6 +16,9 @@ import { connect } from 'react-redux';
 import {
     modificaConsult, modificaDispConsult, modificaNumConsult, modificaQuantCompra
 } from '../../redux/actions/ConsultActions';
+import {
+    modificaNameCard,
+} from '../../redux/actions/CardActions';
 
 
 const BuyConsult = (props) => {
@@ -23,6 +26,8 @@ const BuyConsult = (props) => {
     function addCompra() {
         if (props.qnt_compra <= 0 || props.qnt_compra === '') {
             alert("Digite uma quantidade válida");
+        } else if (props.name_card === '') {
+            alert("Você precisa ter um cartão de crédito cadastrado");
         } else {
             //ADICIONANDO NO BANCO DE DADOS FIREBASE
             db.ref('/COMPRA').push({
@@ -94,9 +99,10 @@ const mapStateToProps = state => (
         num_consults: state.ConsultReducer.num_consults,
         disp_consults: state.ConsultReducer.disp_consults,
         quant_compra: state.ConsultReducer.quant_compra,
+        name_card: state.CardReducer.name_card,
 
     }
 )
 export default connect(mapStateToProps, {
-    modificaConsult, modificaDispConsult, modificaNumConsult, modificaQuantCompra,
+    modificaConsult, modificaDispConsult, modificaNumConsult, modificaQuantCompra, modificaNameCard
 })(BuyConsult);
