@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-//IMAGENS
-import note from '../../images/note.png';
+//COMPONENTES
+import HistoryList from '../HistoryList';
 
 //REDUX
 import { connect } from 'react-redux';
@@ -9,7 +9,28 @@ import {
     modificaConsult, modificaDispConsult, modificaNumConsult
 } from '../../redux/actions/ConsultActions';
 
+//FIREBASE
+import { db } from '../../utils/firebase';
+
 class HistoryContainer extends Component {
+    constructor(props){
+        super(props);
+
+        this.state={
+            items: [],
+            keys: [],
+        }
+    }
+
+    componentDidMount(){
+        db.ref('COMPRA').on('value', snapshot => {
+            let data = snapshot.val();
+            let item = Object.values(data);
+            var key = Object.keys(data);
+            this.setState({ items: item });
+            this.setState({ keys: key });
+        })
+    }
     render() {
         return (
             <div>
@@ -20,48 +41,9 @@ class HistoryContainer extends Component {
                         <div className="sub header">Relatório completo das compras efetuadas no site</div>
                     </div>
                 </h2>
-                <div className="ui huge aligned divided list">
-                    {this.props.consult.map((item, index) => {
-                        return (
-                            <div className="item">
-                                <div className="right floated content">
-                                    <div className="ui button">Add</div>
-                                </div>
-                                <img className="ui avatar image" src={note} />
-                                <div className="content">
-                                    Lena
-                                </div>
-                            </div>
-                        );
-                    })}
-                    <div className="item">
-                                <div className="right floated content">
-                                    <div className="ui button">Add</div>
-                                </div>
-                                <img className="ui avatar image" src={note} />
-                                <div className="content">
-                                    Lena
-                                </div>
-                            </div>
-                            <div className="item">
-                                <div className="right floated content">
-                                    <div className="ui button">Add</div>
-                                </div>
-                                <img className="ui avatar image" src={note} />
-                                <div className="content">
-                                    Lena
-                                </div>
-                            </div>
-                            <div className="item">
-                                <div className="right floated content">
-                                    <div className="ui button">Add</div>
-                                </div>
-                                <img className="ui avatar image" src={note} />
-                                <div className="content">
-                                    Lena
-                                </div>
-                            </div>
-                </div>
+                <HistoryList
+                    items={this.state.items}
+                />
             </div>
         );
     }

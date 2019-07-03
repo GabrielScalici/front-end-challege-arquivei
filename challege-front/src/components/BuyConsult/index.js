@@ -59,7 +59,6 @@ const BuyConsult = (props) => {
                                 <div className="field">
                                     <label>Quantidade</label>
                                     <input type="number" name="name" placeholder="Créditos"
-                                        value={props.qnt_compra}
                                         onChange={(text) => {
                                             props.modificaQuantCompra(text.target.value)
                                         }}

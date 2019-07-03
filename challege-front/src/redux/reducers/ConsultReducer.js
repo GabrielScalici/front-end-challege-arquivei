@@ -1,6 +1,6 @@
 //ESTADO INICIAL
 const INITIAL_STATE = {
-    consult: [],
+    consult: 0,
     num_consults: 0,
     disp_consults: 0,
     last_consult: '',

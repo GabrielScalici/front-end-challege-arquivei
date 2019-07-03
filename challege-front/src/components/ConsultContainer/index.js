@@ -27,7 +27,7 @@ class ConsultContainer extends Component {
                     </Col>
                     <Col sm={12} md={5} className="margin">
                         <CountConsult
-                            count={this.props.num_consults}
+                            count={this.props.consult}
                             title="Consultas Efetuadas"
                         />
                     </Col>

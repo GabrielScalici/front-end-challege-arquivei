@@ -15,7 +15,7 @@ const UseConsult = (props) => {
         } else {
             alert("Consulta realizada com sucesso");
             props.modificaDispConsult(parseInt(props.disp_consults) - 1);
-            props.modificaNumConsult(parseInt(props.num_consults) + 1);
+            props.modificaConsult(parseInt(props.consult) + 1);
         }
     }
 
