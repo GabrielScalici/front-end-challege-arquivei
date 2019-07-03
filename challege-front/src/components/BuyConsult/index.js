@@ -56,7 +56,7 @@ const BuyConsult = (props) => {
 
 
     return (
-        <Container>
+        <Container className="Container">
             <Row>
                 <Col sm={12} md={3}>
                     <Card className="text-center Card-buy">
@@ -82,6 +82,7 @@ const BuyConsult = (props) => {
                 <Col sm={12} md={3} className="margin">
                     <Row>
                         <PriceConsults
+                            className="Price-buy"
                             quantidade="3000"
                             valor={sale(props.num_consults, props.quant_compra).toFixed(2)}
                         />
