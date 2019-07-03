@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 //COMPONENTES
 import CardUser from '../CardUser';
 import BuyConsult from '../BuyConsult';
+import DividerLine from '../DividerLine';
 
 import './BuyContainer.css';
 
@@ -16,21 +17,40 @@ import {
 class BuyContainer extends Component {
     render() {
         return (
-            <Container sm={12} md={12} className="Container-card margin">
-                <Row sm={12} md={12}>
+            // <Container>
+            //     <Row sm={12} md={12}>
+            //         <Col sm={12} md={12} className="margin">
+            //             <div>
+            //                 <p> Comprar Crédito: </p>
+            //                 <BuyConsult />
+            //             </div>
+            //         </Col>
+            //     </Row>
+            //     <Row sm={12} md={12}>
+            //         <Col sm={12} md={12} className="margin">
+            //             <div>
+            //                 <p> Cartão de crédito registrado: </p>
+            //                 <CardUser />
+            //             </div>
+            //         </Col>
+            //     </Row>
+
+            // </Container>
+
+            <Container>
+                <Row sm={12} md={12} className="Container-card grey margin">
                     <Col sm={12} md={5} className="margin">
                         <div>
                             <p> Comprar Crédito: </p>
                             <BuyConsult />
                         </div>
                     </Col>
-                    <Col sm={12} md={5} className="margin">
-                        <div>
-                            <p> Cartão de crédito registrado: </p>
-                            <CardUser />
-                        </div>
-                    </Col>
                 </Row>
+                <Row className="Container-card white margin">
+                    <DividerLine icon="dollar sign" title="Cartão cadastrado" />
+                </Row>
+                <CardUser />
+
             </Container>
         );
     }
