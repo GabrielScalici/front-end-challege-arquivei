@@ -23,24 +23,27 @@ import {
 
 const BuyConsult = (props) => {
 
-    function addCompra() {
-        if (props.qnt_compra <= 0 || props.qnt_compra === '') {
+    function addCompra(num_consults, quant_compra, name_card) {
+        if (quant_compra <= 0 || quant_compra === '') {
             alert("Digite uma quantidade válida");
-        } else if (props.name_card === '') {
+        } else if (name_card === '') {
             alert("Você precisa ter um cartão de crédito cadastrado");
         } else {
+            let value = sale(num_consults, quant_compra).toFixed(2);
             //ADICIONANDO NO BANCO DE DADOS FIREBASE
             db.ref('/COMPRA').push({
-                QUANTIDADE: props.quant_compra,
+                QUANTIDADE: quant_compra,
                 DATA: data(),
-                VALOR: sale(props.num_consults, props.quant_compra).toFixed(2)
+                VALOR: value
             });
 
             //ALERTA SIMPLES DE CONCLUSÃO
-            alert(" Compra feita no valor de " + sale(props.num_consults, props.quant_compra).toFixed(2));
+            alert(" Compra feita no valor de " + value);
 
             //ATUALIZAR OS VALORES
             UpdateValues();
+
+            return value
         }
     }
 
@@ -82,7 +85,7 @@ const BuyConsult = (props) => {
                             quantidade="3000"
                             valor={sale(props.num_consults, props.quant_compra).toFixed(2)}
                         />
-                        <button onClick={() => { addCompra() }} class="ui massive primary basic button">Comprar</button>
+                        <button onClick={() => { addCompra(props.num_consults, props.quant_compra, props.name_card) }} class="ui massive primary basic button">Comprar</button>
                     </Row>
                 </Col>
             </Row>

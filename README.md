@@ -17,3 +17,5 @@ Arquivei FrontEnd Challenge
 * Intalei um componente npm para tornar mais visual o cadastro do cartão de crédito, espero não ter fugido muito do escopo do projeto.
 
 * Como foi dito que o foco não estava no design mas sim na experiência, usei alguns componentes prontos estilizados com react-bootstrap e semantic-ui, apenas para agilidade.
+
+* Para o auxílio dos testes com redux, usei a biblioteca react-mock-store
