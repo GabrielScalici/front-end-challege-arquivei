@@ -9,8 +9,6 @@ const setUp = (props={}) => {
 
 describe('Component show price render', () => {
 
-    let component;
-
     describe('Have Props', () => {
         
         let wrapper;
