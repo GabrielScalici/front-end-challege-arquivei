@@ -31,7 +31,15 @@
 
 * As variaveis ficaram em português por costume e porque ficou mais fácil de entender a lógica para mim.
 
-* Funciona basicamente com dois parametrôs, a quantidade total da atual compra e a quantidade de todas as compras. O código basicamente analisa se a compra atual (Quantidade total de compras já efetuadas) se encaixa na primeira promoção (0.09 centavos), se sobrar consultas para serem computadas manda para a segunda promoção (0.16 centavos) e se sobrar consultas para serem computadas cobram o valor padrão (0.24 centavos).
+* Usando dois parametrôs, a quantidade total da compra e a quantidade de todas as compras. O algoritmo analisa se a compra atual (levando em conta seu histórico de comprar) se encaixa na primeira promoção (0.09 centavos), se sobrar consultas, manda para a segunda promoção (0.16 centavos) e cobram o valor padrão nas que sobrarem (0.24 centavos).
+
+# :fire: Justificativa do uso Firebase
+
+* O firebase poderia ser evitado, usando o redux-persist, criando um array que se manteria salvo, e seria contatenado um novo valor a cada compra, porem optei por usar o firebase para mostrar uma forma diferente de trabalhar com tais dados, e manter salvos tanto o cartão como o usuário, independente do redux.
+
+* Vale lembrar que o redux-persist está sendo usado para manter salvo alguns valores de forma mais fácil do que acessar a base de dados todas as vezes.
+
+# :mag_right: Unit Tests
 
 # :books: Bibliotecas
 
@@ -41,13 +49,15 @@
 
 * check-prop-types, enzyme, enzyme-adapter-react-16 e jest-enzyme para realizar os teste unitários
 
+* firebase, uso de banco de dados simples para mostrar armazenar cadastros e exibir lista de compras.
+
 # :clipboard: Algumas Justificativas
 
-* No começo pensei em lidar com o armazenamento usando o redux-persist, porém comecei a ter dificuldades de usar os estados para alterar componentes e salvar informações, então optei por criar um banco de dados simples do firebase. (Principalmente na parte de histórico de compras, achei que ficaria um pouco mais próximo da realidade).
+* Redux-persist foi usad, apenas para gerara impressão visual e iterações de maneira mais fáci, para que não fosse acessado do banco de dados toda vez.
 
-* Como usei consulta ao banco de dados firebase, algumas classes possuem componentWillMount e utilização de states, Poderia ter sido feito usando React-Hooks, mas achei que seria mais simples e rápido tratar diretamente na classe.
+* Como usei consulta ao banco de dados firebase, algumas classes possuem componentWillMount e utilização de states, Poderia ter sido feito usando React-Hooks ou outra solução, mas por simplicidade tratei diretamente na classe.
 
-* Gostaria de justificar a mistura de indiomas que acabou ocorrendo no código, pois tenho costume de fazer em inglês e no meu trabalho atual foi decido que fizessemos tudo em português. Terei mais atenção das próxima vez.
+* Gostaria de justificar a mistura de português/ingl6es que acabou ocorrendo no código. Tenho costume de fazer em inglês e no meu emprego atual era pedido em português.
 
 * Não usei redux-thunk pois não há consultas a api, de forma que para a complexidade deste projeto, achei mais simples implementar na ausência de middlewares.
 
@@ -55,8 +65,8 @@
 
 * Para o Redux, dividi as actions conforme os pilares centrais do projeto, que ao meu ver foram Card (Cartão de crédito), User (Informações Pessoais) e Consult (Consultas). Poderia ter sido criado mais alguns para algumas manipulações, porém decidi manter o foco nestes.
 
-* Intalei um componente npm para tornar mais visual o cadastro do cartão de crédito, espero não ter fugido muito do escopo do projeto.
+* Foi instalado um componente npm para tornar mais visual o cartão de crédito.
 
-* Não criei o site com TDD (Baseado em testes), de forma que os criei posteriormente.
+* O site não foi criado baseado em testes, de forma que os criei posteriormente.
 
 * Como foi dito que o foco não estava no design mas sim na experiência, usei alguns componentes prontos estilizados com react-bootstrap e semantic-ui, apenas para agilidade.
