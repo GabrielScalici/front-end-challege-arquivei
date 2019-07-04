@@ -38,6 +38,15 @@
 
 * Vale lembrar que o redux-persist está sendo usado para manter salvo alguns valores de forma mais fácil do que acessar a base de dados todas as vezes.
 
+# :lipstick:Auxílio Interface
+
+* Como foi dito que o foco não estava na interface, foram usadas algumas bibliotecas prontas para ajudar.
+
+** semantic-iu : https://semantic-ui.com
+** react-bootstrap: https://react-bootstrap.github.io
+
+* react-bootstrap foi usada inclusiva para manter a responsividade do site.
+
 # :mag_right: Unit Tests
 
 ### Função de promoção da Arquivei
@@ -83,8 +92,3 @@ expect(sale(0, 10000)).toBe(2170.00);
 * O site não foi criado TDD, de forma que criei alguns testes posteriormente.
 
 * Como foi dito que o foco não estava no design mas sim na experiência, usei alguns componentes prontos estilizados com react-bootstrap e semantic-ui, apenas para agilidade.
-
-## :space_invader: Developer
-
-[![Gabriel Scalici](https://avatars0.githubusercontent.com/u/21986951?s=460&v=4)](https://github.com/gabrielscalici)
-
