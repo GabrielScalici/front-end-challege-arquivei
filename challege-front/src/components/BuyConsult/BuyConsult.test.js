@@ -18,4 +18,6 @@ describe('Component show price render', () => {
         const wrapper = component.find('.Price-consult');
         expect(wrapper.length).toBe(1);
     });
+
+
 });
