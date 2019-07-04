@@ -83,3 +83,9 @@ expect(sale(0, 10000)).toBe(2170.00);
 * O site não foi criado TDD, de forma que criei alguns testes posteriormente.
 
 * Como foi dito que o foco não estava no design mas sim na experiência, usei alguns componentes prontos estilizados com react-bootstrap e semantic-ui, apenas para agilidade.
+
+## :space_invader: Developer
+
+[![Gabriel Scalici](https://avatars1.githubusercontent.com/u/12688534?v=3&s=144)](https://github.com/gabrielscalici)
+---|---
+[Gabriel Scalici ](https://github.com/gabrielscalici)
