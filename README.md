@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn-landing.arquivei.com.br/wp-content/themes/pure-arquivei/img/logo-white-small.png?x15117"/>
+  <img src="https://cdn-landing.arquivei.com.br/wp-content/uploads/2017/11/logo-arquivei-600x600.png?x15117"/>
   <h1 align="center"> Challege Arquivei </h1>
   <p align="center"> Frontend </p>
 </p>
