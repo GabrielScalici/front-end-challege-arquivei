@@ -24,6 +24,7 @@ describe('Component show price render', () => {
             wrapper = setUp(props);
         });
 
+        //CARD
         it('render credit card', () => {
             const component = wrapper.find('.CardUser');
             expect(component.length).toBe(1);
