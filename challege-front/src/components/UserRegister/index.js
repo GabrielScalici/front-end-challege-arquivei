@@ -16,7 +16,7 @@ export const UserRegister = (props) => {
             <div className="UserNotRegister">
                 <div className="ui horizontal huge list ">
                     <div className="item">
-                        <img className="ImageNotReg ui avatar image" src={none} />
+                        <img alt="NotReg" className="ImageNotReg ui avatar image" src={none} />
                         <div className="content">
                             Não há nenhum usuário cadastrado
                     </div>
@@ -30,7 +30,7 @@ export const UserRegister = (props) => {
         <div className="UserRegister">
             <div className="ui horizontal huge list" >
                 <div className="item">
-                    <img className="ImageReg ui avatar image" src={user_logo} />
+                    <img alt="Reg"  className="ImageReg ui avatar image" src={user_logo} />
                     <div className="content">
                         <div className="header"> {props.name_user} </div>
                         {props.email_user}

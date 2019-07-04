@@ -7,6 +7,7 @@ import BuyConsult from '../BuyConsult';
 import DividerLine from '../DividerLine';
 
 import './BuyContainer.css';
+import '../../Styles.css';
 
 //REDUX
 import { connect } from 'react-redux';
@@ -21,7 +22,7 @@ class BuyContainer extends Component {
                 <Row sm={12} md={12} className="Container-card grey margin">
                     <Col sm={12} md={5} className="margin">
                         <div>
-                            <p> Comprar Crédito: </p>
+                            <p className="title-text-rubik primary"> Comprar Crédito: </p>
                             <BuyConsult />
                         </div>
                     </Col>

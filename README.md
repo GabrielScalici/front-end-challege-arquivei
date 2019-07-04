@@ -25,6 +25,7 @@
     │   ├── utils               # Itens uteis (Neste caso para a config do firebase)
     │   ├── setupTests.js       # Config inicial do enzyme para unit tests
     │   ├── Styles.css          # Estilos principais (Pouco usado pela ausencia de tanto foco em design)
+    │   ├── App.js              # Config da barra de Navegação e Router entre telas
     ├── ...
 
 # :chart_with_upwards_trend: Solução Problema das promoções

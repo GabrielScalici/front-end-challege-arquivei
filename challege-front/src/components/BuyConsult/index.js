@@ -1,14 +1,14 @@
 import React from 'react';
-import { Card, Button, Container, Row, Col } from 'react-bootstrap';
+import { Card, Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 //COMPONENTES
 import PriceConsults from '../PriceConsults';
-import Alert from '../Alert';
 import { data } from '../DataAtual';
 import { sale } from '../Sale';
 
 import './BuyConsult.css';
+import '../../Styles.css';
 
 //FIREBASE
 import { db } from '../../utils/firebase';
@@ -24,8 +24,6 @@ import {
 
 
 export const BuyConsult = (props) => {
-
-    let alerts = <Alert status={props.error_alert}/> ;
 
     function addCompra(num_consults, quant_compra, name_card) {
         if (quant_compra <= 0 || quant_compra === '') {
@@ -66,7 +64,7 @@ export const BuyConsult = (props) => {
             <Row>
                 <Col sm={12} md={3}>
                     <Card className="text-center Card-buy">
-                        <Card.Header>Comprar</Card.Header>
+                        <Card.Header >Comprar</Card.Header>
                         <Card.Body>
                             <Card.Title> Adquira mais consultas</Card.Title>
                             <div className="ui form">

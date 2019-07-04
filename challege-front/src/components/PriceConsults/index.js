@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import '../../Styles.css';
+
 
 export const PriceConsults = (props) => {
     return (
         <div className="Container-Price">
-            Valor total da compra:
+            <p className="title-text-rubik dark"> Valor total da compra: </p>
                 <div className="ui massive tag labels">
                 <div className="ui massive label">
                     {props.valor}

@@ -10,12 +10,14 @@ import {
     modificaNameCard, modificaNumCard, modificaValidCard, modificaCvvCard
 } from '../../redux/actions/CardActions';
 
+import '../../Styles.css';
+
 const CardRegister = (props) => {
     if (props.name_card === '' && props.num_card === '' && props.valid_card === '' && props.cvv_card === '') {
         return (
             <div class="ui horizontal huge list">
                 <div class="item">
-                    <img class="ui avatar image" src={none} />
+                    <img alt="NoneAvatar" class="ui avatar image" src={none} />
                     <div class="content">
                         Não há nenhum cartão cadastrado
                     </div>
@@ -27,7 +29,7 @@ const CardRegister = (props) => {
     return (
         <div class="ui horizontal huge list">
             <div class="item">
-                <img class="ui avatar image" src={card} />
+                <img alt="Avatar" class="ui avatar image" src={card} />
                 <div class="content">
                     <div class="header"> {props.num_card} </div>
                     {props.name_card}

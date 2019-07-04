@@ -7,34 +7,38 @@ import note from '../../images/note.png';
 //FIREBASE
 import { db } from '../../utils/firebase';
 
+import '../../Styles.css';
+
 export const HistoryList = (props) => {
 
-    function removeItem(id){
-        db.ref('COMPRA').child(id).remove();
-        alert("Registro apagado com sucesso");
+    function removeItem(id, safe) {
+            db.ref('COMPRA').child(id).remove();
+            console.log(id);
     }
 
     return (
         <div className="ui massive celled list">
             {props.items.map((item, index) => {
-                return (
-                    <div className="item" key={index} >
-                        <img className="ui avatar image" src={note} />
-                        <div className="content">
-                            <div className="header"> Preço: R$: {item.VALOR}</div>
-                            {item.QUANTIDADE} consultas compradas em {item.DATA}
-                        </div>
-                        <div className="right floated content">
-                            <div className="ui buttons">
-                                {/* <button className="ui green basic button">Editar</button> */}
-                                <button
-                                    onClick={() => removeItem(props.keys[index])}
-                                    
-                                    className="ui red basic button">Apagar</button>
+                if (item.VALOR !== '') {
+                    return (
+                        <div className="item" key={index} >
+                            <img alt="Note"className="ui avatar image" src={note} />
+                            <div className="content">
+                                <div className=" title-text-rubik primary"> Preço: R$: {item.VALOR}</div>
+                                <p className="body-text-rubik dark"> {item.QUANTIDADE} consultas compradas em {item.DATA} </p>
+                            </div>
+                            <div className="right floated content">
+                                <div className="ui buttons">
+                                    {/* <button className="ui green basic button">Editar</button> */}
+                                    <button
+                                        onClick={() => removeItem(props.keys[index], props.keys[0])}
+
+                                        className="ui red basic button">Apagar</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                );
+                    );
+                }
             })}
         </div>
 
