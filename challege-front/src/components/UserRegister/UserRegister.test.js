@@ -7,7 +7,7 @@ const setUp = (props={}) => {
     return component;
 }
 
-describe('Component show price render', () => {
+describe('Component show infos and images render', () => {
 
     let component;
 

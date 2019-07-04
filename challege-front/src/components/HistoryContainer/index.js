@@ -12,17 +12,17 @@ import {
 //FIREBASE
 import { db } from '../../utils/firebase';
 
-class HistoryContainer extends Component {
-    constructor(props){
+export class HistoryContainer extends Component {
+    constructor(props) {
         super(props);
 
-        this.state={
+        this.state = {
             items: [],
             keys: [],
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         db.ref('COMPRA').on('value', snapshot => {
             let data = snapshot.val();
             let item = Object.values(data);
@@ -34,21 +34,23 @@ class HistoryContainer extends Component {
     render() {
         return (
             <div>
-                <h2 className="ui icon header">
-                    <i className="clone icon"></i>
-                    <div className="content">
-                        Histórico
+                <div className="Title-History">
+                    <h2 className="ui icon header">
+                        <i className="clone icon"></i>
+                        <div className="content">
+                            Histórico
                         <div className="sub header">Relatório completo das compras efetuadas no site</div>
-                    </div>
-                </h2>
+                        </div>
+                    </h2>
+                </div>
                 <HistoryList
+                    className="List-Buy"
                     items={this.state.items}
                 />
             </div>
         );
     }
 }
-
 
 //USANDO REDUX
 const mapStateToProps = state => (

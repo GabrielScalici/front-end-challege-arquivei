@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 //IMAGENS
 import note from '../../images/note.png';
 
-const HistoryList = (props) => {
+export const HistoryList = (props) => {
     return (
         <div className="ui massive celled list">
             {props.items.map((item, index) => {
@@ -22,5 +23,8 @@ const HistoryList = (props) => {
     );
 };
 
+HistoryList.propTypes = {
+    items: PropTypes.array,
+}
 
 export default HistoryList;
