@@ -4,10 +4,11 @@ import {combineReducers} from 'redux';
 import UserReducer from './UserReducer';
 import CardReducer from './CardReducer';
 import ConsultReducer from './ConsultReducer';
+import AlertReducer from './AlertReducer';
 
 export default combineReducers({
     UserReducer: UserReducer,
     ConsultReducer: ConsultReducer,
     CardReducer: CardReducer,
-    reducer1: () => [],
+    AlertReducer: AlertReducer,
 });

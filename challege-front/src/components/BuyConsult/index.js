@@ -3,6 +3,7 @@ import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 
 //COMPONENTES
 import PriceConsults from '../PriceConsults';
+import Alert from '../Alert';
 import { data } from '../DataAtual';
 import { sale } from '../Sale';
 
@@ -23,8 +24,10 @@ import {
 
 export const BuyConsult = (props) => {
 
-    function addCompra(num_consults, quant_compra) {
-        if (qnt_compra <= 0 || qnt_compra === '') {
+    let alerts = <Alert status={props.error_alert}/> ;
+
+    function addCompra(num_consults, quant_compra, name_card) {
+        if (quant_compra <= 0 || quant_compra === '') {
             alert("Digite uma quantidade válida");
             return 0;
         } else if (name_card === '') {
@@ -79,7 +82,6 @@ export const BuyConsult = (props) => {
                     </Card>
                 </Col>
                 <Col sm={12} md={3} className="margin">
-
                 </Col>
                 <Col sm={12} md={3} className="margin">
                     <Row>
@@ -88,7 +90,7 @@ export const BuyConsult = (props) => {
                             quantidade="3000"
                             valor={sale(props.num_consults, props.quant_compra).toFixed(2)}
                         />
-                        <button onClick={() => { addCompra(props.num_consults, props.quant_compra) }} class="ui massive primary basic button">Comprar</button>
+                        <button onClick={() => { addCompra(props.num_consults, props.quant_compra, props.name_card) }} className="ui massive primary basic button">Comprar</button>
                     </Row>
                 </Col>
             </Row>
@@ -106,9 +108,9 @@ const mapStateToProps = state => (
         disp_consults: state.ConsultReducer.disp_consults,
         quant_compra: state.ConsultReducer.quant_compra,
         name_card: state.CardReducer.name_card,
-
     }
 )
 export default connect(mapStateToProps, {
-    modificaConsult, modificaDispConsult, modificaNumConsult, modificaQuantCompra, modificaNameCard
+    modificaConsult, modificaDispConsult, modificaNumConsult, modificaQuantCompra, 
+    modificaNameCard
 })(BuyConsult);

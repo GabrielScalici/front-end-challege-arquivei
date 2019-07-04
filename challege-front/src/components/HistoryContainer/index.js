@@ -31,6 +31,8 @@ export class HistoryContainer extends Component {
             this.setState({ keys: key });
         })
     }
+
+
     render() {
         return (
             <div>
@@ -46,6 +48,7 @@ export class HistoryContainer extends Component {
                 <HistoryList
                     className="List-Buy"
                     items={this.state.items}
+                    keys={this.state.keys}
                 />
             </div>
         );
