@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 //COMPONENTES
 import PriceConsults from '../PriceConsults';
@@ -48,7 +49,7 @@ export const BuyConsult = (props) => {
             //ATUALIZAR OS VALORES
             UpdateValues();
 
-            return price;
+            return 1;
         }
     }
 
@@ -87,8 +88,7 @@ export const BuyConsult = (props) => {
                     <Row>
                         <PriceConsults
                             className="Price-consult"
-                            quantidade="3000"
-                            valor={sale(props.num_consults, props.quant_compra).toFixed(2)}
+                            valor={(sale(props.num_consults, props.quant_compra).toFixed(2).toString())}
                         />
                         <button onClick={() => { addCompra(props.num_consults, props.quant_compra, props.name_card) }} className="ui massive primary basic button">Comprar</button>
                     </Row>
@@ -99,6 +99,13 @@ export const BuyConsult = (props) => {
 
     );
 };
+
+BuyConsult.propTypes = {
+    quant_compra: PropTypes.number,
+    num_consults: PropTypes.number,
+    disp_consults: PropTypes.number,
+    valor: PropTypes.string,
+}
 
 //USANDO REDUX
 const mapStateToProps = state => (

@@ -37,13 +37,13 @@ const FormPerfil = (props) => {
                     <div className="field">
                         <label>Nome</label>
                         <input type="text" name="name" placeholder="Nome Completo" value={props.name_user}
-                            onChange={text => props.modificaNameUser(text.target.value)}
+                            onChange={text => props.modificaNameUser(text.target.value.toUpperCase())}
                         />
                     </div>
                     <div className="field">
                         <label>E-mail</label>
                         <input type="email" name="email" placeholder="E-mail" value={props.email_user}
-                            onChange={text => props.modificaEmailUser(text.target.value)}
+                            onChange={text => props.modificaEmailUser(text.target.value.toLowerCase())}
                         />
                     </div>
                     <div className="field">

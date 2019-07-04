@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
-const PriceConsults = (props) => {
+export const PriceConsults = (props) => {
     return (
-        <div>
+        <div className="Container-Price">
             Valor total da compra:
                 <div className="ui massive tag labels">
                 <div className="ui massive label">
@@ -12,6 +13,10 @@ const PriceConsults = (props) => {
             </div>
         </div>
     );
+}
+
+PriceConsults.propTypes = {
+    valor: PropTypes.string
 }
 
 export default PriceConsults;

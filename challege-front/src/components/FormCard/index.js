@@ -62,7 +62,7 @@ const FormCard = (props) => {
                                         />
                                         <div className="ui pointing red basic label">
                                             Não precisa digitar a barra
-                                    </div>
+                                        </div>
                                     </div>
                                 </Col>
                                 <Col>
