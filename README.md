@@ -61,9 +61,13 @@ expect(sale(0, 2500)).toBe(370.00);
 expect(sale(0, 10000)).toBe(2170.00);
 ```
 
+### Demais testes
+
 * PropTypes utilizados.
 
 * Testes de renderização condicional de componentes em UserRegister.test.js. Há uma visualização diferente caso já tenha usuário e/ou cartão cadastrado.
+
+* Não foi utilizado mock, pois não soube como encaixar fora do contexto do axios.
 
 # :books: Bibliotecas
 
