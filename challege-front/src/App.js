@@ -28,11 +28,14 @@ class App extends Component {
                             />
                             {'Arquivei Lite'}
                         </Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/consulta">Consulta</Nav.Link>
                             <Nav.Link href="/perfil">Perfil</Nav.Link>
                         </Nav>
+                        </Navbar.Collapse>
                     </Navbar>
                     <Switch>
                         <Route exact path='/' component={Home} />
