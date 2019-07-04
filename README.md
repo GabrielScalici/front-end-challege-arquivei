@@ -69,6 +69,8 @@ expect(sale(0, 10000)).toBe(2170.00);
 
 * Não foi utilizado mock, pois não soube como encaixar fora do contexto do axios.
 
+* Foram criados alguns testes para verificar o funcionamento das actions, diretamente na pasta actions.
+
 # :books: Bibliotecas
 
 * react-credit-cards para tornar a interface do cartão de crétido mais dinâmica e divertida.
