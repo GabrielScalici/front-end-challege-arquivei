@@ -10,14 +10,16 @@ import {
     modificaNameUser, modificaEmailUser, modificaCnpjUser
 } from '../../redux/actions/UserActions';
 
-const UserRegister = (props) => {
+export const UserRegister = (props) => {
     if (props.name_user === '' && props.email_user === '' && props.cnpj_user === '') {
         return (
-            <div class="ui horizontal huge list">
-                <div class="item">
-                    <img class="ui avatar image" src={none} />
-                    <div class="content">
-                        Não há nenhum usuário cadastrado
+            <div className="UserNotRegister">
+                <div className="ui horizontal huge list ">
+                    <div className="item">
+                        <img className="ImageNotReg ui avatar image" src={none} />
+                        <div className="content">
+                            Não há nenhum usuário cadastrado
+                    </div>
                     </div>
                 </div>
             </div>
@@ -25,17 +27,20 @@ const UserRegister = (props) => {
     }
 
     return (
-        <div class="ui horizontal huge list">
-            <div class="item">
-                <img class="ui avatar image" src={user_logo} />
-                <div class="content">
-                    <div class="header"> {props.name_user} </div>
-                    {props.email_user}
-                    <br />
-                    {props.cnpj_user}
+        <div className="UserRegister">
+            <div className="ui horizontal huge list" >
+                <div className="item">
+                    <img className="ImageReg ui avatar image" src={user_logo} />
+                    <div className="content">
+                        <div className="header"> {props.name_user} </div>
+                        {props.email_user}
+                        <br />
+                        {props.cnpj_user}
+                    </div>
                 </div>
             </div>
         </div>
+
     );
 }
 

@@ -10,10 +10,10 @@ import {
 } from '../../redux/actions/CardActions';
 
 
-const CardUser = (props) => {
+export const CardUser = (props) => {
     return (
-        <Container sm={12}>
-            <Cards
+        <Container sm={12} >
+            <Cards className="CardUser"
                 number={props.num_card}
                 name={props.name_card}
                 expiry={props.valid_card}
