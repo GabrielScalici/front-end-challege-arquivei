@@ -8,6 +8,24 @@
   <img src="https://forthebadge.com/images/badges/made-with-javascript.svg"/>
 </p>
 
+# :file_folder: Organização das pastas
+
+### A Principais Pastas
+
+    .
+    ├── ...
+    ├── src                     # Arquivos principais
+    │   ├── components          # Components com seu respectivo unit test
+    │   ├── images              # Imagens e Icones estilizados
+    │   └── redux               # Implementação do redux
+    │   │   ├── actions 
+    │   │   ├── reducers
+    │   │   ├── store
+    │   ├── screens             # Telas principais do programa
+    │   ├── utils               # Itens uteis (Neste caso para a config do firebase)
+    │   ├── setupTests.js       # Config inicial do enzyme para unit tests
+    │   ├── Styles.css          # Estilos principais (Pouco usado pela ausencia de tanto foco em design)
+    ├── ...
 
 # :chart_with_upwards_trend: Solução Problema das promoções
 
