@@ -86,6 +86,5 @@ expect(sale(0, 10000)).toBe(2170.00);
 
 ## :space_invader: Developer
 
-[![Gabriel Scalici](https://avatars1.githubusercontent.com/u/12688534?v=3&s=144)](https://github.com/gabrielscalici)
----|---
-[Gabriel Scalici ](https://github.com/gabrielscalici)
+[![Gabriel Scalici](https://avatars0.githubusercontent.com/u/21986951?s=460&v=4)](https://github.com/gabrielscalici)]
+
