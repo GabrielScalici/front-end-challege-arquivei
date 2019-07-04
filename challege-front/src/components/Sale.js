@@ -1,10 +1,27 @@
 export function sale( total, qnt_comprada ) {
     let sum = 0;
 
-    if(total > 2000){
+    //CHECAGEM PARA CASO O USUARIO JA TENHA FEITO 2000 COMPRAS
+    if(total >= 2000){
         return qnt_comprada * 0.24;
-    } 
+    }
+    
+    //CHECAGEM PARA CASO O USUARIO JA TENHA FEITO 1000 COMPRAS
+    if(total >= 1000){
+        let disponivel_segunda = 2000 - total;
+        let segunda_promo = qnt_comprada - disponivel_segunda;
+        if(segunda_promo <= 0){
+            //COMPRA MENOR QUE A SEGUNDA PROMOCAO
+            sum += qnt_comprada * 0.16;
+        }
+        if(segunda_promo > 0){
+            //USA A SEGUNDA E VAI PARA O PADRAO
+            sum += disponivel_segunda * 0.16;
+            sum += segunda_promo * 0.24;
+        }
+    }
 
+    //CHECAGEM PARA CASO O USUARIO TENHA FEITO MENOS DE 1000 COMPRAS
     if(total < 1000){
         let disponivel_primeira = 1000 - total;
         let primeira_promo = qnt_comprada - disponivel_primeira;
@@ -24,7 +41,7 @@ export function sale( total, qnt_comprada ) {
             if(segunda_promo > 0){
                 //USA A SEGUNDA E VAI PARA O PRECO PADRAO
                 sum += (qnt_comprada - primeira_promo) * 0.16;
-                sum += (segunda_promo) * 0.24;
+                sum += segunda_promo * 0.24;
             }
         }
     }

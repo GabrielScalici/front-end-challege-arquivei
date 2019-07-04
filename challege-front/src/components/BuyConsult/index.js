@@ -88,7 +88,7 @@ export const BuyConsult = (props) => {
                     <Row>
                         <PriceConsults
                             className="Price-consult"
-                            valor={(sale(props.num_consults, props.quant_compra).toFixed(2).toString())}
+                            valor={(sale(props.num_consults, props.quant_compra).toFixed(2))}
                         />
                         <button onClick={() => { addCompra(props.num_consults, props.quant_compra, props.name_card) }} className="ui massive primary basic button">Comprar</button>
                     </Row>

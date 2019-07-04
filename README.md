@@ -10,7 +10,7 @@
 
 # :file_folder: Organização das pastas
 
-### A Principais Pastas
+### Principais Pastas
 
     .
     ├── ...

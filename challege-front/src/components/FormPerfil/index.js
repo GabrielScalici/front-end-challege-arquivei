@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-//import { CheckCnpj } from '../CheckCnpj';
 
 //FIREBASE
 import { db } from '../../utils/firebase';
@@ -16,7 +15,9 @@ import './FormPerfil.css';
 
 const FormPerfil = (props) => {
 
+
     function addUser() {
+
         //ADICIONANDO NO BANCO DE DADOS FIREBASE
         db.ref('/USER').push({
             NAME: props.name_user,
@@ -26,6 +27,7 @@ const FormPerfil = (props) => {
 
         //ALERTA SIMPLES DE CONCLUSÃO
         alert("Usuário cadastrado com sucesso!");
+
 
     }
 
@@ -37,7 +39,7 @@ const FormPerfil = (props) => {
                     <div className="field">
                         <label>Nome</label>
                         <input type="text" name="name" placeholder="Nome Completo" value={props.name_user}
-                            onChange={text => props.modificaNameUser(text.target.value.toUpperCase())}
+                            onChange={text => props.modificaNameUser(text.target.value.toLowerCase())}
                         />
                     </div>
                     <div className="field">
