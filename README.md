@@ -1,8 +1,21 @@
-# ChallengeFrontEnd
+<p align="center">
+  <img src="https://cdn-landing.arquivei.com.br/wp-content/themes/pure-arquivei/img/devices-macless.png?x15117"/>
+  <h1 align="center"> Challege Arquivei </h1>
+  <p align="center"> Frontend </p>
+</p>
+
+<p align="center">
+  <img src="https://forthebadge.com/images/badges/made-with-javascript.svg"/>
+</p>
 
 
+# :chart_with_upwards_trend: Solução Problema das promoções
 
-# Bibliotecas
+* As variaveis ficaram em português por costume e porque ficou mais fácil de entender a lógica para mim.
+
+* Funciona basicamente com dois parametrôs, a quantidade total da atual compra e a quantidade de todas as compras. O código basicamente analisa se a compra atual (Quantidade total de compras já efetuadas) se encaixa na primeira promoção (0.09 centavos), se sobrar consultas para serem computadas manda para a segunda promoção (0.16 centavos) e se sobrar consultas para serem computadas cobram o valor padrão (0.24 centavos).
+
+# :books: Bibliotecas
 
 * react-credit-cards para tornar a interface do cartão de crétido mais dinâmica e divertida.
 
@@ -10,7 +23,7 @@
 
 * check-prop-types, enzyme, enzyme-adapter-react-16 e jest-enzyme para realizar os teste unitários
 
-# Algumas Justificativas
+# :clipboard: Algumas Justificativas
 
 * No começo pensei em lidar com o armazenamento usando o redux-persist, porém comecei a ter dificuldades de usar os estados para alterar componentes e salvar informações, então optei por criar um banco de dados simples do firebase. (Principalmente na parte de histórico de compras, achei que ficaria um pouco mais próximo da realidade).
 
