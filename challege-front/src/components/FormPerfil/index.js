@@ -1,6 +1,9 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
+//COMPONENTES
+//import check_cnpj from '../CheckCnpj';
+
 //FIREBASE
 import { db } from '../../utils/firebase';
 
@@ -16,7 +19,8 @@ import './FormPerfil.css';
 const FormPerfil = (props) => {
 
 
-    function addUser() {
+    function addUser(cnpj) {
+
 
         //ADICIONANDO NO BANCO DE DADOS FIREBASE
         db.ref('/USER').push({
@@ -27,6 +31,7 @@ const FormPerfil = (props) => {
 
         //ALERTA SIMPLES DE CONCLUSÃO
         alert("Usuário cadastrado com sucesso!");
+
 
 
     }
@@ -57,7 +62,7 @@ const FormPerfil = (props) => {
                         />
                     </div>
                     <button className="ui button"
-                        onClick={() => addUser()}
+                        onClick={() => addUser(props.cnpj_user.toString())}
                     > Salvar </button>
                 </form>
             </Container>

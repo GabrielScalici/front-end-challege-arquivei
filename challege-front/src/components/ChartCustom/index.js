@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import '../../Styles.css';
 import { Chart, ArgumentAxis, ValueAxis, LineSeries } from "@devexpress/dx-react-chart-material-ui";
@@ -25,6 +26,7 @@ const ChartCustom = (props) => {
 
     return (
         <LineChart
+            className="Chart-Custom"
             width={props.width/1.3}
             height={560}
             data={items}
@@ -45,5 +47,8 @@ const ChartCustom = (props) => {
     );
 };
 
+ChartCustom.propTypes = {
+    data: PropTypes.object,
+}
 
 export default ChartCustom;
