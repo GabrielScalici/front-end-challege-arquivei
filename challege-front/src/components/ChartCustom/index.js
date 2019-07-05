@@ -36,9 +36,9 @@ const ChartCustom = (props) => {
     return (
         <LineChart
             width={props.width/1.3}
-            height={400}
+            height={560}
             data={items}
-            margin={{ top: 30, right: 30, left: 20, bottom: 5 }}
+            margin={{ top: 60, right: 60, left: 60, bottom: 60 }}
         >
             <Line
                 type='monotone'

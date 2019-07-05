@@ -14,6 +14,8 @@ import {
 //FIREBASE
 import { db } from '../../utils/firebase';
 
+import '../../Styles.css';
+
 export class HistoryContainer extends Component {
     constructor(props) {
         super(props);
@@ -52,13 +54,20 @@ export class HistoryContainer extends Component {
     render() {
         return (
             <div>
+                <div className="Title-History">
+                    <h2 className="ui icon header">
+                        <div className="content primary">
+                            Gráfico
+                        <div className="sub header">Saiba quantas consultas comprou em cada compra</div>
+                        </div>
+                    </h2>
+                </div>
                 <Container sm={12} >
-                    <ChartCustom data={this.state.items} width={this.state.screenWidth}/>
+                    <ChartCustom data={this.state.items} width={this.state.screenWidth} />
                 </Container>
                 <div className="Title-History">
                     <h2 className="ui icon header">
-                        <i className="clone icon"></i>
-                        <div className="content">
+                        <div className="content primary">
                             Histórico
                         <div className="sub header">Relatório completo das compras efetuadas no site</div>
                         </div>
