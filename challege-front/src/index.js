@@ -12,8 +12,9 @@ import { PersistGate } from 'redux-persist/integration/react';
 //ROTAS
 import { BrowserRouter } from 'react-router-dom'
 
-//BOOSTRAP PARA COMPONENTES PRONTOS
+//NECESSARIO SER NO ROOT.JS
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+import '@devexpress/dx-react-chart-bootstrap4/dist/dx-react-chart-bootstrap4.css';
 
 ReactDOM.render(
     <BrowserRouter>

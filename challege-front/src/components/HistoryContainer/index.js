@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
 //COMPONENTES
 import HistoryList from '../HistoryList';
+import ChartCustom from '../ChartCustom';
 
 //REDUX
 import { connect } from 'react-redux';
@@ -19,7 +21,11 @@ export class HistoryContainer extends Component {
         this.state = {
             items: [],
             keys: [],
+            screenWidth: null,
         }
+
+        //this.state = { screenWidth: null };
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
 
     componentDidMount() {
@@ -29,13 +35,26 @@ export class HistoryContainer extends Component {
             var key = Object.keys(data);
             this.setState({ items: item });
             this.setState({ keys: key });
-        })
+        });
+
+        window.addEventListener("resize", this.updateWindowDimensions());
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateWindowDimensions)
+    }
+
+    updateWindowDimensions() {
+        this.setState({ screenWidth: window.innerWidth });
     }
 
 
     render() {
         return (
             <div>
+                <Container sm={12} >
+                    <ChartCustom data={this.state.items} width={this.state.screenWidth}/>
+                </Container>
                 <div className="Title-History">
                     <h2 className="ui icon header">
                         <i className="clone icon"></i>
