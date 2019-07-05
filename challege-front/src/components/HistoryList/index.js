@@ -4,17 +4,9 @@ import PropTypes from 'prop-types';
 //IMAGENS
 import note from '../../images/note.png';
 
-//FIREBASE
-import { db } from '../../utils/firebase';
-
 import '../../Styles.css';
 
 export const HistoryList = (props) => {
-
-    function removeItem(id, safe) {
-            db.ref('COMPRA').child(id).remove();
-            console.log(id);
-    }
 
     return (
         <div className="ui massive celled list">
@@ -26,15 +18,6 @@ export const HistoryList = (props) => {
                             <div className="content">
                                 <div className=" title-text-rubik primary"> Preço: R$: {item.VALOR}</div>
                                 <p className="body-text-rubik dark"> {item.QUANTIDADE} consultas compradas em {item.DATA} </p>
-                            </div>
-                            <div className="right floated content">
-                                <div className="ui buttons">
-                                    {/* <button className="ui green basic button">Editar</button> */}
-                                    <button
-                                        onClick={() => removeItem(props.keys[index], props.keys[0])}
-
-                                        className="ui red basic button">Apagar</button>
-                                </div>
                             </div>
                         </div>
                     );

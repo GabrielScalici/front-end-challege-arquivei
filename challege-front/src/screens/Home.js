@@ -17,11 +17,6 @@ class Home extends Component {
                 <div className="">
                     <Image className="margin-default" fluid src={logo_completo} />
                 </div>
-                <div className="Background-Error">
-                    <Container>
-
-                    </Container>
-                </div>
             </div>
         );
     }

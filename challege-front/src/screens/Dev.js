@@ -3,9 +3,8 @@ import { Image, Container } from 'react-bootstrap';
 
 //COMPONENTES
 import ResetStates from '../components/ResetStates';
-
-//IMAGENS
-import logo_completo from '../images/logo_completo.png'
+import BannerIni from '../components/BannerIni';
+import DevContainer from '../components/DevContainer';
 
 //CSS
 import '../Styles.css';
@@ -14,9 +13,10 @@ class Dev extends Component {
     render() {
         return (
             <div className="Container">
-                <div className="">
-                    <Image className="margin-default" fluid src={logo_completo} />
-                </div>
+                <BannerIni title="Auxiliar Dev" />
+                <Container>
+                    <DevContainer />
+                </Container>
                 <div className="Background-Error">
                     <Container>
                         <ResetStates />

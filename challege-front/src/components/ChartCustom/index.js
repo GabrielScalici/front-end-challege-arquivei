@@ -47,7 +47,7 @@ const ChartCustom = (props) => {
 };
 
 ChartCustom.propTypes = {
-    data: PropTypes.object,
+    data: PropTypes.array,
 }
 
 export default ChartCustom;
