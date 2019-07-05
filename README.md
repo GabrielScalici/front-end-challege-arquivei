@@ -28,7 +28,7 @@
     │   ├── App.js              # Config da barra de Navegação e Router entre telas
     ├── ...
 
-# :chart_with_upwards_trend: Solução Problema das promoções
+# :hammer: Solução Problema das promoções
 
 * Usando dois parametrôs, a quantidade total da compra e a quantidade de todas as compras. O algoritmo analisa se a compra atual (levando em conta seu histórico de comprar) se encaixa na primeira promoção (0.09 centavos), se sobrar consultas, manda para a segunda promoção (0.16 centavos) e cobram o valor padrão nas que sobrarem (0.24 centavos).
 
@@ -70,6 +70,15 @@ expect(sale(0, 10000)).toBe(2170.00);
 * Não foi utilizado mock, pois não soube como encaixar fora do contexto do axios.
 
 * Foram criados alguns testes para verificar o funcionamento das actions, diretamente na pasta actions.
+
+# :chart_with_upwards_trend: Funcionamento do gráfico
+
+* Gráfico do número da compra em função da quantidade comprada
+
+* Está responsivo com uma análise feita à mão pra descobrir tamanho da tela
+
+* A responsividade funciona quando o componente é renderizado em uma tela, caso seja mexido seu comprimento com a mão, a responsividade não está funcionando, apenas quando já abre em determinada largura.
+
 
 # :books: Bibliotecas
 
