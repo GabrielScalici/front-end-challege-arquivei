@@ -10,7 +10,7 @@ import CardUser from '../CardUser';
 //REDUX
 import { connect } from 'react-redux';
 import {
-    modificaNameCard, modificaNumCard, modificaValidCard, modificaCvvCard
+    modificaNameCard, modificaNumCard, modificaValidCard, modificaCvvCard, modificaSaveCard
 } from '../../redux/actions/CardActions';
 
 import '../../Styles.css';
@@ -29,6 +29,7 @@ const FormCard = (props) => {
 
         //ALERTA SIMPLES DE CONCLUSÃO
         alert("Cartão cadastrado com sucesso!");
+        props.modificaSaveCard(true);
 
     }
 
@@ -99,8 +100,9 @@ const mapStateToProps = state => (
         num_card: state.CardReducer.num_card,
         valid_card: state.CardReducer.valid_card,
         cvv_card: state.CardReducer.cvv_card,
+        save_card: state.CardReducer.save_card,
     }
 )
 export default connect(mapStateToProps, {
-    modificaNameCard, modificaNumCard, modificaValidCard, modificaCvvCard
+    modificaNameCard, modificaNumCard, modificaValidCard, modificaCvvCard, modificaSaveCard
 })(FormCard);

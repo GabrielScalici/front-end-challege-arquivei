@@ -3,7 +3,8 @@ const INITIAL_STATE = {
     name_card: '',
     num_card: '',
     valid_card: '',
-    cvv_card: ''
+    cvv_card: '',
+    save_card: false
 }
 
 export default(state = INITIAL_STATE, action) => {
@@ -19,6 +20,9 @@ export default(state = INITIAL_STATE, action) => {
     }
     if(action.type === 'MODIFICA_CVV_CARD'){
         return { ...state, cvv_card: action.payload }
+    }
+    if(action.type === 'MODIFICA_SAVE_CARD'){
+        return { ...state, save_card: action.payload }
     }
 
     return state;

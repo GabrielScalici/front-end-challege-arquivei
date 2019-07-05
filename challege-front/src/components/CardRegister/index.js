@@ -7,7 +7,7 @@ import none from '../../images/none.png';
 //REDUX
 import { connect } from 'react-redux';
 import {
-    modificaNameCard, modificaNumCard, modificaValidCard, modificaCvvCard
+    modificaNameCard, modificaNumCard, modificaValidCard, modificaCvvCard, modificaSaveCard
 } from '../../redux/actions/CardActions';
 
 import '../../Styles.css';
@@ -34,6 +34,9 @@ const CardRegister = (props) => {
                     <div class="header"> {props.num_card} </div>
                     {props.name_card}
                 </div>
+                <div className="ui pointing red basic label">
+                    {/* {if(props.save_card) ? "" : "Você precisa salvar ainda"} */}
+                </div>
             </div>
         </div>
     );
@@ -46,8 +49,9 @@ const mapStateToProps = state => (
         num_card: state.CardReducer.num_card,
         valid_card: state.CardReducer.valid_card,
         cvv_card: state.CardReducer.cvv_card,
+        save_card: state.CardReducer.save_card,
     }
 )
 export default connect(mapStateToProps, {
-    modificaNameCard, modificaNumCard, modificaValidCard, modificaCvvCard
+    modificaNameCard, modificaNumCard, modificaValidCard, modificaCvvCard, modificaSaveCard
 })(CardRegister);

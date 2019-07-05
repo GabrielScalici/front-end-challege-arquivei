@@ -33,3 +33,12 @@ export const modificaCvvCard = (text) => {
         payload: text,
     }
 }
+
+export const modificaSaveCard = (text) => {
+    //RETORNA UMA ACTION
+    console.log(text);
+    return{
+        type: 'MODIFICA_SAVE_CARD',
+        payload: text,
+    }
+}
