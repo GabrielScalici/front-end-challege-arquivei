@@ -42,3 +42,28 @@ export const modificaQuantCompra = (text) => {
         payload: text,
     }
 }
+
+export const modificaFieldConsult = (text) => {
+    //RETORNA UMA ACTION
+    console.log(text);
+    return{
+        type: 'MODIFICA_FIELD_CONSULT',
+        payload: text,
+    }
+}
+export const modificaNameConsult = (text) => {
+    //RETORNA UMA ACTION
+    console.log(text);
+    return{
+        type: 'MODIFICA_Name_CONSULT',
+        payload: text,
+    }
+}
+export const modificaPhotoConsult = (text) => {
+    //RETORNA UMA ACTION
+    console.log(text);
+    return{
+        type: 'MODIFICA_PHOTO_CONSULT',
+        payload: text,
+    }
+}

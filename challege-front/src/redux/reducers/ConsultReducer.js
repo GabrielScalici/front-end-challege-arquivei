@@ -5,6 +5,9 @@ const INITIAL_STATE = {
     disp_consults: 0,
     last_consult: '',
     quant_compra: 0,
+    field_consult: '',
+    name_consult: '',
+    photo_consult: '',
 }
 
 export default(state = INITIAL_STATE, action) => {
@@ -23,6 +26,15 @@ export default(state = INITIAL_STATE, action) => {
     }
     if(action.type === 'MODIFICA_QUANT_COMPRA'){
         return { ...state, quant_compra: action.payload }
+    }
+    if(action.type === 'MODIFICA_FIELD_CONSULT'){
+        return { ...state, field_consult: action.payload }
+    }
+    if(action.type === 'MODIFICA_NAME_CONSULT'){
+        return { ...state, name_consult: action.payload }
+    }
+    if(action.type === 'MODIFICA_PHOTO_CONSULT'){
+        return { ...state, photo_consult: action.payload }
     }
 
     return state;
