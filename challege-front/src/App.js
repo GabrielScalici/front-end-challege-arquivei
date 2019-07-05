@@ -11,6 +11,8 @@ import Perfil from './screens/Perfil';
 //IMAGENS
 import logo from './images/logo.png';
 
+import './Styles.css';
+
 class App extends Component {
 
     render() {

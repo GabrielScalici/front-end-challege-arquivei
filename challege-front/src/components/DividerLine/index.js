@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../Styles.css';
 
 const DividerLine = (props) => {
     if(props.simple){
@@ -11,7 +12,7 @@ const DividerLine = (props) => {
         <div>
             <h4 className="ui horizontal divider header">
                 <i className={ props.icon + " icon"}></i>
-                {props.title}
+                <p className="body-text-rubik dark"> {props.title} </p>
             </h4>
         </div>
 

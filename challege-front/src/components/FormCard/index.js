@@ -13,7 +13,7 @@ import {
     modificaNameCard, modificaNumCard, modificaValidCard, modificaCvvCard
 } from '../../redux/actions/CardActions';
 
-//import '../../Styles.css';
+import '../../Styles.css';
 import './FormCard.css';
 
 const FormCard = (props) => {
@@ -34,19 +34,19 @@ const FormCard = (props) => {
 
     return (
         <div>
-            <h2> Informações de pagamento </h2>
+            <p className="primary title-text-rubik"> Informações de pagamento </p>
             <Container className="Container-form" >
                 <Row>
                     <Col sm={12} md={6} >
                         <form className="ui form">
                             <div className="field">
-                                <label>Nome</label>
+                                <label className="roboto dark" >Nome</label>
                                 <input type="text" name="name" placeholder="Nome escrito no cartão" value={props.name_card}
                                     onChange={text => props.modificaNameCard(text.target.value)}
                                 />
                             </div>
                             <div className="field">
-                                <label>Número do cartão</label>
+                                <label className="roboto dark" >Número do cartão</label>
                                 <input type="text" name="num" placeholder="Número do cartão" value={props.num_card}
                                     onChange={text => props.modificaNumCard(text.target.value)}
                                 />
@@ -54,7 +54,7 @@ const FormCard = (props) => {
                             <Row>
                                 <Col>
                                     <div className="field">
-                                        <label> Mês/Ano </label>
+                                        <label className="roboto dark" > Mês/Ano </label>
                                         <input type="text" name="valid" placeholder="Validade" value={props.valid_card}
                                             onChange={text => {
                                                 props.modificaValidCard(text.target.value)
@@ -67,7 +67,7 @@ const FormCard = (props) => {
                                 </Col>
                                 <Col>
                                     <div className="field">
-                                        <label>CVV</label>
+                                        <label className="roboto dark" >CVV</label>
                                         <input type="text" name="código" placeholder="CVV" value={props.cvv_card}
                                             onChange={text => {
                                                 props.modificaCvvCard(text.target.value)

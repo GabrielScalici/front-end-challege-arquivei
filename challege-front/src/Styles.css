@@ -44,6 +44,7 @@
     color: #091223;
 }
 
+
 .hero-text-rubik{
     font-size: 42px;
     font-family: 'Rubik', sans-serif;
@@ -64,6 +65,10 @@
     font-family: 'Rubik', sans-serif;
 }
 
+.rubik{
+    font-family: 'Rubik', sans-serif;
+}
+
 .body-text-roboto{
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
@@ -71,6 +76,10 @@
 
 .title-text-roboto{
     font-size: 27px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.roboto{
     font-family: 'Roboto', sans-serif;
 }
 

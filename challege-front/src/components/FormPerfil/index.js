@@ -13,7 +13,7 @@ import {
     modificaNameUser, modificaEmailUser, modificaCnpjUser
 } from '../../redux/actions/UserActions';
 
-//import '../../Styles.css';
+import '../../Styles.css';
 import './FormPerfil.css';
 
 const FormPerfil = (props) => {
@@ -38,23 +38,23 @@ const FormPerfil = (props) => {
 
     return (
         <div>
-            <h2> Informações pessoais </h2>
+            <p className="primary title-text-rubik"> Informações pessoais </p>
             <Container className="Container-form" >
                 <form className="ui form">
                     <div className="field">
-                        <label>Nome</label>
+                        <label className="roboto dark">Nome</label>
                         <input type="text" name="name" placeholder="Nome Completo" value={props.name_user}
                             onChange={text => props.modificaNameUser(text.target.value.toLowerCase())}
                         />
                     </div>
                     <div className="field">
-                        <label>E-mail</label>
+                        <label className="roboto dark">E-mail</label>
                         <input type="email" name="email" placeholder="E-mail" value={props.email_user}
                             onChange={text => props.modificaEmailUser(text.target.value.toLowerCase())}
                         />
                     </div>
                     <div className="field">
-                        <label>CNPJ</label>
+                        <label className="roboto dark" >CNPJ</label>
                         <input type="text" name="cnpj" placeholder="CNPJ" value={props.cnpj_user}
                             onChange={text => {
                                 props.modificaCnpjUser(text.target.value)
