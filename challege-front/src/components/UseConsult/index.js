@@ -5,27 +5,33 @@ import axios from 'axios';
 //REDUX
 import { connect } from 'react-redux';
 import {
-    modificaConsult, modificaDispConsult, modificaNumConsult, modificaLastConsult, modificaFieldConsult
+    modificaConsult, modificaDispConsult, modificaNumConsult, modificaLastConsult, modificaFieldConsult,
+    modificaNameConsult, modificaPhotoConsult
 } from '../../redux/actions/ConsultActions';
 
 const UseConsult = (props) => {
 
-    async function UseConsult(field_consult) {
+    async function UseConsult() {
         if (props.disp_consults <= 0) {
             alert("Desculpe, você precisa recarregar suas consultas");
         } else {
-            //alert("Consulta realizada com sucesso");
-
             try {
-                const response = await axios.get('https://api.github.com/users/' + field_consult);
-                console.log(response);
+                const response = await axios.get('https://api.github.com/users/' + props.field_consult);
+                console.log(props.field_consult);
                 props.modificaDispConsult(parseInt(props.disp_consults) - 1);
                 props.modificaConsult(parseInt(props.consult) + 1);
+                props.modificaNameConsult(response.data.name);
+                props.modificaPhotoConsult(response.data.avatar_url);
 
-                alert(response);
+                alert("Consulta realizada com sucesso");
+
+                console.log(response.data.name);
+                console.log(response.data.avatar_url);
+
             } catch (error) {
                 alert(error);
                 console.error(error);
+                alert("Ops, ocorreu um erro: " + error);
             }
 
         }
@@ -33,7 +39,6 @@ const UseConsult = (props) => {
 
     return (
         <Container>
-            <Container>
                 <Card className="text-center">
                     <Card.Header>Consultar</Card.Header>
                     <Card.Body>
@@ -51,22 +56,9 @@ const UseConsult = (props) => {
                                 />
                             </div>
                         </div>
-                        <Button onClick={() => UseConsult(props.fiel_consult)} variant="primary">Consultar</Button>
+                        <Button onClick={() => UseConsult()} variant="primary">Consultar</Button>
                     </Card.Body>
                 </Card>
-            </Container>
-            <Container>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                    </Card.Text>
-                    </Card.Body>
-                </Card>
-            </Container>
         </Container>
     );
 }
@@ -78,10 +70,13 @@ const mapStateToProps = state => (
         num_consults: state.ConsultReducer.num_consults,
         disp_consults: state.ConsultReducer.disp_consults,
         last_consult: state.ConsultReducer.last_consult,
-        field_consult: state.ConsultReducer.fiel_consult,
+        field_consult: state.ConsultReducer.field_consult,
+        name_consult: state.ConsultReducer.name_consult,
+        photo_consult: state.ConsultReducer.photo_consult,
 
     }
 )
 export default connect(mapStateToProps, {
-    modificaConsult, modificaDispConsult, modificaNumConsult, modificaLastConsult, modificaFieldConsult
+    modificaConsult, modificaDispConsult, modificaNumConsult, modificaLastConsult, 
+    modificaFieldConsult, modificaNameConsult, modificaPhotoConsult
 })(UseConsult);

@@ -55,7 +55,7 @@ export const modificaNameConsult = (text) => {
     //RETORNA UMA ACTION
     console.log(text);
     return{
-        type: 'MODIFICA_Name_CONSULT',
+        type: 'MODIFICA_NAME_CONSULT',
         payload: text,
     }
 }

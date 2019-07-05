@@ -7,6 +7,7 @@ import './ConsultContainer.css';
 import CountConsult from '../CountConsult';
 import UseConsult from '../UseConsult';
 import DividerLine from '../DividerLine';
+import ResultConsult from '../ResultConsult';
 
 //REDUX
 import { connect } from 'react-redux';
@@ -37,6 +38,9 @@ class ConsultContainer extends Component {
                 </Row>
 
                 <UseConsult />
+
+                <DividerLine title="Última consulta realizada" />
+                <ResultConsult />
 
             </Container>
         );

@@ -4,7 +4,8 @@ import { Card, Button } from 'react-bootstrap';
 //REDUX
 import { connect } from 'react-redux';
 import {
-    modificaConsult, modificaDispConsult, modificaNumConsult, modificaLastConsult, modificaQuantCompra
+    modificaConsult, modificaDispConsult, modificaNumConsult, modificaLastConsult, modificaQuantCompra,
+    modificaNameConsult, modificaPhotoConsult, modificaFieldConsult
 } from '../../redux/actions/ConsultActions';
 import {
     modificaNameCard, modificaNumCard, modificaCvvCard, modificaValidCard
@@ -28,6 +29,9 @@ const ResetStates = (props) => {
         props.modificaLastConsult('');
         props.modificaNumConsult(0);
         props.modificaQuantCompra(0);
+        props.modificaFieldConsult('');
+        props.modificaNameConsult('');
+        props.modificaPhotoConsult('');
 
         alert("Todos os Campos foram restaurado para o valor inicial");
         
@@ -61,11 +65,15 @@ const mapStateToProps = state => (
         name_user: state.UserReducer.name_user,
         email_user: state.UserReducer.email_user,
         cnpj_user: state.UserReducer.cnpj_user,
+        field_consult: state.ConsultReducer.fiel_consult,
+        name_consult: state.ConsultReducer.name_consult,
+        photo_consult: state.ConsultReducer.photo_consult,
 
     }
 )
 export default connect(mapStateToProps, {
     modificaConsult, modificaDispConsult, modificaNumConsult, modificaLastConsult, 
     modificaNameCard, modificaNumCard, modificaCvvCard, modificaValidCard,
-    modificaNameUser, modificaEmailUser, modificaCnpjUser, modificaQuantCompra
+    modificaNameUser, modificaEmailUser, modificaCnpjUser, modificaQuantCompra,
+    modificaNameConsult, modificaPhotoConsult, modificaFieldConsult
 })(ResetStates);
