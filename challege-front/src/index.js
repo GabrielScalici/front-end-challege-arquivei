@@ -14,7 +14,6 @@ import { BrowserRouter } from 'react-router-dom'
 
 //NECESSARIO SER NO ROOT.JS
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
-import '@devexpress/dx-react-chart-bootstrap4/dist/dx-react-chart-bootstrap4.css';
 
 ReactDOM.render(
     <BrowserRouter>
