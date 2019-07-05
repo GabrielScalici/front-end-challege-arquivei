@@ -92,7 +92,7 @@ expect(sale(0, 10000)).toBe(2170.00);
 
 # :clipboard: Algumas Justificativas
 
-* Redux-persist foi usad, apenas para gerara impressão visual e iterações de maneira mais fáci, para que não fosse acessado do banco de dados toda vez.
+* Redux-persist foi usado apenas para gerar facilitar o trabalho visual e iterações de maneira mais fáci, para que não fosse acessado do banco de dados toda vez.
 
 * Como usei consulta ao banco de dados firebase, algumas classes possuem componentWillMount e utilização de states, Poderia ter sido feito usando React-Hooks ou outra solução, mas por simplicidade tratei diretamente na classe.
 

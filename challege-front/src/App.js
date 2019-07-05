@@ -7,6 +7,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import Home from './screens/Home';
 import Consulta from './screens/Consulta';
 import Perfil from './screens/Perfil';
+import Dev from './screens/Dev';
 
 //IMAGENS
 import logo from './images/logo.png';
@@ -36,6 +37,7 @@ class App extends Component {
                             <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/consulta">Consulta</Nav.Link>
                             <Nav.Link href="/perfil">Perfil</Nav.Link>
+                            <Nav.Link href="/dev">Dev</Nav.Link>
                         </Nav>
                         </Navbar.Collapse>
                     </Navbar>
@@ -43,6 +45,7 @@ class App extends Component {
                         <Route exact path='/' component={Home} />
                         <Route path='/consulta' component={Consulta} />
                         <Route path='/perfil' component={Perfil} />
+                        <Route path='/dev' component={Dev} />
                     </Switch>
                 </div>
 
