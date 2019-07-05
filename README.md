@@ -88,6 +88,18 @@ expect(sale(0, 10000)).toBe(2170.00);
 
 * firebase, uso de banco de dados simples para mostrar armazenar cadastros e exibir lista de compras.
 
+* axios para buscar informações de uma url
+
+* recharts para a criação do gráfico
+
+# :abc: Consulta API - axios
+
+* Primeiramente tentei encomprar uma url para que com passagem de paramêtros pudesse ser buscado informações sobre notas fiscais eletrônicas, porém algumas que era usadas direto da receita federal, estavam com captcha, procurei em alguns fórums, mas não achei nada relevante
+
+* Resolvi usar uma url do github (Buscar foto e nome do usuário), apenas para mostrar o funcionamento do axios, de maneira simples.
+
+* Vale lembrar que a busca do github foge completamente ao escopo do projeto, é meramente ilustrativo.
+
 # :clipboard: Algumas Justificativas
 
 * Redux-persist foi usado apenas para gerar facilitar o trabalho visual e iterações de maneira mais fáci, para que não fosse acessado do banco de dados toda vez.
