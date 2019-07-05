@@ -67,8 +67,6 @@ expect(sale(0, 10000)).toBe(2170.00);
 
 * Testes de renderização condicional de componentes em UserRegister.test.js. Há uma visualização diferente caso já tenha usuário e/ou cartão cadastrado.
 
-* Não foi utilizado mock, pois não soube como encaixar fora do contexto do axios.
-
 * Foram criados alguns testes para verificar o funcionamento das actions, diretamente na pasta actions.
 
 # :chart_with_upwards_trend: Funcionamento do gráfico
@@ -98,7 +96,7 @@ expect(sale(0, 10000)).toBe(2170.00);
 
 * Gostaria de justificar a mistura de português/inglês que acabou ocorrendo no código. Tenho costume de fazer em inglês e no meu emprego atual era pedido em português.
 
-* Não usei redux-thunk pois não há consultas a api, de forma que para a complexidade deste projeto, achei mais simples implementar na ausência de middlewares.
+* Não usei redux-thunk pois a consulta a api é simples e rápida
 
 * A divisão dos arquivos e pasta está feito da maneira que venho trabalhando, acredito que tenha algumas boas práticas e organizações mais agradáveis.
 

@@ -40,7 +40,9 @@ class ConsultContainer extends Component {
                 <UseConsult />
 
                 <DividerLine title="Última consulta realizada" />
-                <ResultConsult />
+                <div className="Container-Consult">
+                    <ResultConsult />
+                </div>
 
             </Container>
         );
