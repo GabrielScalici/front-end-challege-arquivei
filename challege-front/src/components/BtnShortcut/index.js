@@ -3,7 +3,7 @@ import './BtnShortcut.css';
 
 const BtnShortcut = (props) => {
     return (
-        <button class="ui massive blue button"> {props.title} </button>
+        <button onClick={props.onClick} class="ui massive blue button"> {props.title} </button>
     );
 }
 

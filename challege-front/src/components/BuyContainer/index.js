@@ -21,27 +21,10 @@ class BuyContainer extends Component {
         return (
             <Container>
                 <Row sm={12} md={12} className="Container-card grey margin">
-                    <Col sm={12} md={5} className="margin">
-                        <div>
-                            <p className="title-text-rubik primary"> Comprar Crédito: </p>
-                            <BuyConsult />
-                        </div>
-                    </Col>
-                </Row>
-                <p className="title-text-rubik primary"> Compra Rápida: </p>
-                <Row sm={12} md={12} className="Container-card grey margin">
-                    <Col sm={12} md={3} className="margin">
-                        <BtnShortcut title="10 CONSULTAS"/>
-                    </Col>
-                    <Col sm={12} md={3} className="margin">
-                        <BtnShortcut title="20 CONSULTAS"/>
-                    </Col>
-                    <Col sm={12} md={3} className="margin">
-                        <BtnShortcut title="50 CONSULTAS"/>
-                    </Col>
-                    <Col sm={12} md={3} className="margin">
-                        <BtnShortcut title="100 CONSULTAS"/>
-                    </Col>
+                    <div>
+                        <p className="title-text-rubik primary"> Comprar Crédito: </p>
+                        <BuyConsult />
+                    </div>
                 </Row>
                 <Row className="Container-card white margin">
                     <DividerLine icon="dollar sign" title="Cartão cadastrado" />

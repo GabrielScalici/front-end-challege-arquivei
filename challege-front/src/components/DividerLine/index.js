@@ -9,7 +9,7 @@ const DividerLine = (props) => {
     }
     
     return (
-        <div>
+        <div className="margin-default">
             <h4 className="ui horizontal divider header">
                 <i className={ props.icon + " icon"}></i>
                 <p className="body-text-rubik dark"> {props.title} </p>
