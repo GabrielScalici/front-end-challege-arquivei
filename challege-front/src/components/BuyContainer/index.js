@@ -20,9 +20,9 @@ class BuyContainer extends Component {
     render() {
         return (
             <Container>
+                <p className="title-text-rubik primary"> Comprar Crédito: </p>
                 <Row sm={12} md={12} className="Container-card grey margin">
                     <div>
-                        <p className="title-text-rubik primary"> Comprar Crédito: </p>
                         <BuyConsult />
                     </div>
                 </Row>
