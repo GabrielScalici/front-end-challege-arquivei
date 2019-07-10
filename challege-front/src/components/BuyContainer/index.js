@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import CardUser from '../CardUser';
 import BuyConsult from '../BuyConsult';
 import DividerLine from '../DividerLine';
+import BtnShortcut from '../BtnShortcut';
 
 import './BuyContainer.css';
 import '../../Styles.css';
@@ -25,6 +26,21 @@ class BuyContainer extends Component {
                             <p className="title-text-rubik primary"> Comprar Crédito: </p>
                             <BuyConsult />
                         </div>
+                    </Col>
+                </Row>
+                <p className="title-text-rubik primary"> Compra Rápida: </p>
+                <Row sm={12} md={12} className="Container-card grey margin">
+                    <Col sm={12} md={3} className="margin">
+                        <BtnShortcut title="10 CONSULTAS"/>
+                    </Col>
+                    <Col sm={12} md={3} className="margin">
+                        <BtnShortcut title="20 CONSULTAS"/>
+                    </Col>
+                    <Col sm={12} md={3} className="margin">
+                        <BtnShortcut title="50 CONSULTAS"/>
+                    </Col>
+                    <Col sm={12} md={3} className="margin">
+                        <BtnShortcut title="100 CONSULTAS"/>
                     </Col>
                 </Row>
                 <Row className="Container-card white margin">
