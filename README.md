@@ -43,9 +43,8 @@
 * Como foi dito que o foco não estava na interface, foram usadas algumas bibliotecas prontas para ajudar.
 
 * semantic-iu : https://semantic-ui.com
-* react-bootstrap: https://react-bootstrap.github.io
+* react-bootstrap: https://react-bootstrap.github.io (usada inclusiva para manter a responsividade do site.)
 
-* react-bootstrap foi usada inclusiva para manter a responsividade do site.
 
 # :mag_right: Unit Tests
 
@@ -101,6 +100,8 @@ expect(sale(0, 10000)).toBe(2170.00);
 * Vale lembrar que a busca do github foge completamente ao escopo do projeto, é meramente ilustrativo.
 
 # :clipboard: Algumas Justificativas
+
+* React-Hooks simples, usado para render condicional.
 
 * Redux-persist foi usado apenas para gerar facilitar o trabalho visual e iterações de maneira mais fáci, para que não fosse acessado do banco de dados toda vez.
 

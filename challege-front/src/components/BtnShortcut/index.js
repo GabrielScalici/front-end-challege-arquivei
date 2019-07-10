@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 import '../../Styles.css';
 
+//IMAGENS
+import money from '../../images/money.png';
+
 export const BtnShortcut = (props) => {
 
     const [show, setShow] = useState(false);
@@ -22,7 +25,7 @@ export const BtnShortcut = (props) => {
         );
     } else {
         return (
-            <div className="BtnShortcut">
+            <div className="BtnShortcutPrice">
                 <button
                     className="ui massive blue button"
                     onClick={props.onClick}
@@ -33,7 +36,8 @@ export const BtnShortcut = (props) => {
                 </button>
                 <div class="field">
                     <div class="ui pointing label huge">
-                        R$ {props.price}
+                    <img alt="Money" className="ui avatar image" src={money} />
+                        {props.price}
                     </div>
                 </div>
             </div>

@@ -18,7 +18,7 @@ const ChartCustom = (props) => {
     let count = 0;
 
     props.data.map((item, index) => {
-        items.push({ name: 'Compra ' + count, quantidade: item.QUANTIDADE });
+        items.push({ name: 'Compra' + count, quantidade: item.QUANTIDADE });
         count++;
     });
     console.log("items");
@@ -41,7 +41,7 @@ const ChartCustom = (props) => {
             <Tooltip />
             <YAxis/>
             <XAxis dataKey='name' />
-            <Legend> Compras x Quantidade</Legend>
+            <Legend> Compras x Quantidade </Legend>
         </LineChart>
     );
 };

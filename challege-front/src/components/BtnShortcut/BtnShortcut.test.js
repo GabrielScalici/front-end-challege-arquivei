@@ -16,10 +16,56 @@ describe('Component show shortcut button render', () => {
         component = setUp();
     });
 
-    it('render btn component', () => {
-        const wrapper = component.find('.BtnShortcut');
-        expect(wrapper.length).toBe(1);
+    describe('render with show = false', () => {
+        
+        let wrapper;
+        beforeEach(() => {
+            const props = {
+                price: '20,00'
+            };
+            wrapper = setUp(props);
+        });
+
+        //COMPONENTS
+        it('render only button', () => {
+            const component = wrapper.find('.BtnShortcut');
+            expect(component.length).toBe(1);
+        });
+
+        it('render price', () => {
+            const component = wrapper.find('.BtnShortcutPrice');
+            expect(component.length).toBe(0);
+        });
+
+        
     });
+    
+    // describe('render with show = true', () => {
+        
+    //     let wrapper;
+    //     beforeEach(() => {
+    //         const props = {
+    //             price: '20,00'
+    //         };
+    //         wrapper = setUp(props);
+    //     });
+
+    //     const show = ({ callback }) => {
+    //         callback();
+    //         return true;
+    //     };
+
+    //     //COMPONENTS
+    //     it('render only button ', () => {
+    //         const component = wrapper.find('.BtnShortcut');
+    //         expect(component.length).toBe(0);
+    //     });
+    //     it('render price ', () => {
+    //         const component = wrapper.find('.BtnShortcutPrice');
+    //         expect(component.length).toBe(1);
+    //     });
+
+    // });
 
     describe('Checking PropTypes', () => {
 

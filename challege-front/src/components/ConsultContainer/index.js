@@ -8,6 +8,7 @@ import CountConsult from '../CountConsult';
 import UseConsult from '../UseConsult';
 import DividerLine from '../DividerLine';
 import ResultConsult from '../ResultConsult';
+import TitleContainer from '../TitleContainer';
 
 //REDUX
 import { connect } from 'react-redux';
@@ -19,6 +20,7 @@ class ConsultContainer extends Component {
     render() {
         return (
             <Container>
+                <TitleContainer title="Total de consultas" desc="Saiba quantas consultas você ainda tem disponível"/>
                 <Row sm={12} md={12} className="Container-card grey margin">
                     <Col sm={12} md={5} className="margin">
                         <CountConsult
@@ -36,7 +38,7 @@ class ConsultContainer extends Component {
                 <Row className="Container-card white margin">
                     <DividerLine icon="thumbtack" title="Realizar consulta" />
                 </Row>
-
+                
                 <UseConsult />
 
                 <DividerLine title="Última consulta realizada" />

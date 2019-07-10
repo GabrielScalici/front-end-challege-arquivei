@@ -9,7 +9,6 @@ const setUp = (props={}) => {
 
 describe('Component show infos and images render', () => {
 
-    let component;
 
     describe('Have Props', () => {
         

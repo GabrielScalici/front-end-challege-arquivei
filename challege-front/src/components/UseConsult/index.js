@@ -40,12 +40,8 @@ const UseConsult = (props) => {
     return (
         <Container>
                 <Card className="text-center">
-                    <Card.Header>Consultar</Card.Header>
+                    <Card.Header>Consultar no github</Card.Header>
                     <Card.Body>
-                        <Card.Title> GitHUb</Card.Title>
-                        <Card.Text>
-                            Busca um usuário do github
-                </Card.Text>
                         <div className="ui form">
                             <div className="field">
                                 <label>Digite o nome do usuário Github</label>
