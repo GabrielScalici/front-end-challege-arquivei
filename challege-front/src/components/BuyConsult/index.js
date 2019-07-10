@@ -93,16 +93,20 @@ export const BuyConsult = (props) => {
             <DividerLine title="Compra rápida" />
             <Row>
                 <Col sm={12} md={3}>
-                    <BtnShortcut title="10 CONSULTAS" onClick={() => { addCompra(props.num_consults, 10, props.name_card) }} />
+                    <BtnShortcut title="10 CONSULTAS" price={(sale(props.num_consults, 10).toFixed(2))}
+                    onClick={() => { addCompra(props.num_consults, 10, props.name_card) }} />
                 </Col>
                 <Col sm={12} md={3}>
-                    <BtnShortcut title="50 CONSULTAS" onClick={() => { addCompra(props.num_consults, 50, props.name_card) }} />
+                    <BtnShortcut title="50 CONSULTAS" price={(sale(props.num_consults, 50).toFixed(2))}
+                    onClick={() => { addCompra(props.num_consults, 50, props.name_card) }} />
                 </Col>
                 <Col sm={12} md={3}>
-                    <BtnShortcut title="100 CONSULTAS" onClick={() => { addCompra(props.num_consults, 100, props.name_card) }} />
+                    <BtnShortcut title="100 CONSULTAS" price={(sale(props.num_consults, 100).toFixed(2))}
+                    onClick={() => { addCompra(props.num_consults, 100, props.name_card) }} />
                 </Col>
                 <Col sm={12} md={3}>
-                    <BtnShortcut title="200 CONSULTAS" onClick={() => { addCompra(props.num_consults, 200, props.name_card) }} />
+                    <BtnShortcut title="200 CONSULTAS" price={(sale(props.num_consults, 200).toFixed(2))}
+                    onClick={() => { addCompra(props.num_consults, 200, props.name_card) }} />
                 </Col>
             </Row>
 

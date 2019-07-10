@@ -14,14 +14,11 @@ import {
 } from '../../redux/actions/UserActions';
 
 import '../../Styles.css';
-import './FormPerfil.css';
+//import './FormPerfil.css';
 
 const FormPerfil = (props) => {
 
-
     function addUser(cnpj) {
-
-
         //ADICIONANDO NO BANCO DE DADOS FIREBASE
         db.ref('/USER').push({
             NAME: props.name_user,
@@ -31,9 +28,6 @@ const FormPerfil = (props) => {
 
         //ALERTA SIMPLES DE CONCLUSÃO
         alert("Usuário cadastrado com sucesso!");
-
-
-
     }
 
     return (

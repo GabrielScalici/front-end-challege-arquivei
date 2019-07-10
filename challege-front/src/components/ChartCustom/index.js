@@ -34,7 +34,7 @@ const ChartCustom = (props) => {
             <Line
                 type='monotone'
                 dataKey='quantidade'
-                stroke='#8884d8'
+                stroke='#4076FA'
                 activeDot={{ r: 8 }}
             />
             <CartesianGrid strokeDasharray='3 3' />
