@@ -97,11 +97,11 @@ expect(sale(0, 10000)).toBe(2170.00);
 
 * Resolvi usar uma url do github (Buscar foto e nome do usuário), apenas para mostrar o funcionamento do axios, de maneira simples.
 
-* Vale lembrar que a busca do github foge completamente ao escopo do projeto, é meramente ilustrativo.
+* Vale lembrar que a busca do github foge completamente ao escopo do projeto, é meramente ilustrativo para realizar os gastos das consultas, Visto que tal parte não precisava ser construída.
 
 # :clipboard: Algumas Justificativas
 
-* React-Hooks simples, usado para render condicional.
+* React-Hooks simples, usado para render condicional na parte de compra rápida de créditos.
 
 * Redux-persist foi usado apenas para gerar facilitar o trabalho visual e iterações de maneira mais fáci, para que não fosse acessado do banco de dados toda vez.
 
