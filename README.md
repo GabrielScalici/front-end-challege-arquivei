@@ -83,7 +83,7 @@ expect(sale(0, 10000)).toBe(2170.00);
 
 * prop-types e check-prop-types: Uso de PropTypes e uso em testes unitários.
 
-* check-prop-types, enzyme, enzyme-adapter-react-16 e jest-enzyme para realizar os teste unitários
+* check-prop-types, enzyme, enzyme-adapter-react-16 e jest-enzyme, react-test-renderer para realizar os teste unitários
 
 * firebase, uso de banco de dados simples para mostrar armazenar cadastros e exibir lista de compras.
 
@@ -118,3 +118,14 @@ expect(sale(0, 10000)).toBe(2170.00);
 * O site não foi criado TDD, de forma que criei alguns testes posteriormente.
 
 * Como foi dito que o foco não estava no design mas sim na experiência, usei alguns componentes prontos estilizados com react-bootstrap e semantic-ui, apenas para agilidade.
+
+
+# :newspaper: Documentações e Estudos
+
+* Youtube - Testing React - Jack Franklin
+
+* Udemy - Modern React with Redux - Stephen Grider
+
+* Documentação oficial JEST - deltice.github.io
+
+* Documentação oficial ENZYME - airbnb.io/enzyme

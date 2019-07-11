@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import ConnectedApp, { BtnShortcut } from './index';
 import checkPropTypes from 'check-prop-types';
+import renderer from 'react-test-renderer';
 
 
 const setUp = (props = {}) => {
@@ -17,7 +18,7 @@ describe('Component show shortcut button render', () => {
     });
 
     describe('render with show = false', () => {
-        
+
         let wrapper;
         beforeEach(() => {
             const props = {
@@ -37,35 +38,15 @@ describe('Component show shortcut button render', () => {
             expect(component.length).toBe(0);
         });
 
-        
+        it('render with mouse event', () => {
+            const tree = renderer.create(<BtnShortcut/>).toJSON();
+
+            expect(tree).toMatchSnapshot();
+        });
+
+
     });
-    
-    // describe('render with show = true', () => {
-        
-    //     let wrapper;
-    //     beforeEach(() => {
-    //         const props = {
-    //             price: '20,00'
-    //         };
-    //         wrapper = setUp(props);
-    //     });
 
-    //     const show = ({ callback }) => {
-    //         callback();
-    //         return true;
-    //     };
-
-    //     //COMPONENTS
-    //     it('render only button ', () => {
-    //         const component = wrapper.find('.BtnShortcut');
-    //         expect(component.length).toBe(0);
-    //     });
-    //     it('render price ', () => {
-    //         const component = wrapper.find('.BtnShortcutPrice');
-    //         expect(component.length).toBe(1);
-    //     });
-
-    // });
 
     describe('Checking PropTypes', () => {
 
@@ -85,7 +66,5 @@ describe('Component show shortcut button render', () => {
 
 
     });
-
-
 
 });

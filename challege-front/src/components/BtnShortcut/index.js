@@ -34,8 +34,8 @@ export const BtnShortcut = (props) => {
                 >
                     {props.title}
                 </button>
-                <div class="field">
-                    <div class="ui pointing label huge">
+                <div className="field">
+                    <div className="ui pointing label huge">
                     <img alt="Money" className="ui avatar image" src={money} />
                         {props.price}
                     </div>
