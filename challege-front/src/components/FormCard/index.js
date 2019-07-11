@@ -6,7 +6,6 @@ import { db } from '../../utils/firebase';
 
 //COMPONENTES
 import CardUser from '../CardUser';
-import { isnum } from '../IsNum';
 import TitleContainer from '../TitleContainer';
 
 //REDUX
