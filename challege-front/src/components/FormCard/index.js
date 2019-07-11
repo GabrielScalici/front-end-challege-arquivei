@@ -26,7 +26,7 @@ const FormCard = (props) => {
 
     function addCard() {
 
-        if(props.cvv_card === '' || props.name_card === '' || props.num_card === '' || props.num_card === ''){
+        if (props.cvv_card === '' || props.name_card === '' || props.num_card === '' || props.num_card === '') {
             alert("Por favor, não deixe campos em branco");
             return false;
         }

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 //COMPONENTES
 import PriceConsults from '../PriceConsults';
 import BtnShortcut from '../BtnShortcut';
+import DividerLine from '../DividerLine';
 import { data } from '../DataAtual';
 import { sale } from '../Sale';
 
@@ -21,17 +22,22 @@ import {
 import {
     modificaNameCard,
 } from '../../redux/actions/CardActions';
-import DividerLine from '../DividerLine';
+import {
+    modificaNameUser,
+} from '../../redux/actions/UserActions';
 
 
 export const BuyConsult = (props) => {
 
-    function addCompra(num_consults, quant_compra, name_card) {
+    function addCompra(num_consults, quant_compra, name_card, name_user) {
         if (quant_compra <= 0 || quant_compra === '') {
             alert("Digite uma quantidade válida");
             return 0;
         } else if (name_card === '') {
             alert("Você precisa ter um cartão de crédito cadastrado");
+            return 0;
+        } else if (name_user === '') {
+            alert("Você precisa ter um perfil cadastrado");
             return 0;
         } else {
             let price = sale(num_consults, quant_compra).toFixed(2);
@@ -87,7 +93,7 @@ export const BuyConsult = (props) => {
                     />
                 </Col>
                 <Col sm={12} md={4}>
-                    <button onClick={() => { addCompra(props.num_consults, props.quant_compra, props.name_card) }} className="ui massive primary basic button">Comprar</button>
+                    <button onClick={() => { addCompra(props.num_consults, props.quant_compra, props.name_card, props.name_user) }} className="ui massive primary basic button">Comprar</button>
                 </Col>
             </Row>
             <DividerLine title="Compra rápida" />
@@ -130,9 +136,10 @@ const mapStateToProps = state => (
         disp_consults: state.ConsultReducer.disp_consults,
         quant_compra: state.ConsultReducer.quant_compra,
         name_card: state.CardReducer.name_card,
+        name_user: state.UserReducer.name_user,
     }
 )
 export default connect(mapStateToProps, {
     modificaConsult, modificaDispConsult, modificaNumConsult, modificaQuantCompra,
-    modificaNameCard
+    modificaNameCard, modificaNameUser,
 })(BuyConsult);
