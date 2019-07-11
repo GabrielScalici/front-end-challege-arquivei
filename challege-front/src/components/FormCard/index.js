@@ -57,7 +57,7 @@ const FormCard = (props) => {
                             <div className="field">
                                 <label className="roboto dark" >Nome</label>
                                 <input type="text" name="name" placeholder="Nome escrito no cartão" value={props.name_card}
-                                    onChange={text => props.modificaNameCard(text.target.value)}
+                                    onChange={text => props.modificaNameCard(text.target.value.toUpperCase())}
                                 />
                             </div>
                             <div className="field">
