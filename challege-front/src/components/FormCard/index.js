@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 //FIREBASE
@@ -19,17 +19,13 @@ import './FormCard.css';
 
 const FormCard = (props) => {
 
-    const [error_cvv, setCvv] = useState(false);
-    const [error_name, setName] = useState(false);
-    const [error_num, setNum] = useState(false);
-    const [error_valid, setValid] = useState(false);
-
     function addCard() {
 
         if (props.cvv_card === '' || props.name_card === '' || props.num_card === '' || props.num_card === '') {
             alert("Por favor, não deixe campos em branco");
             return false;
         }
+        
         //ADICIONANDO NO BANCO DE DADOS FIREBASE
         db.ref('/CARD').push({
             NAME: props.name_card,

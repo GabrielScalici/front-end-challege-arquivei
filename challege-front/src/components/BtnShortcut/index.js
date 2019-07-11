@@ -10,14 +10,18 @@ export const BtnShortcut = (props) => {
 
     const [show, setShow] = useState(false);
 
+    function onMouse(e) {
+        setShow(e)
+    }
+
     if (!show) {
         return (
             <div className="BtnShortcut">
                 <button
                     className="ui massive blue button"
                     onClick={props.onClick}
-                    onMouseEnter={() => { setShow(true) }}
-                    onMouseLeave={() => { setShow(false) }}
+                    onMouseEnter={() => onMouse(true)}
+                    onMouseLeave={() => onMouse(false)}
                 >
                     {props.title}
                 </button>
@@ -29,8 +33,8 @@ export const BtnShortcut = (props) => {
                 <button
                     className="ui massive blue button"
                     onClick={props.onClick}
-                    onMouseEnter={() => { setShow(true) }}
-                    onMouseLeave={() => { setShow(false) }}
+                    onMouseEnter={() => onMouse(true)}
+                    onMouseLeave={() => onMouse(false)}
                 >
                     {props.title}
                 </button>

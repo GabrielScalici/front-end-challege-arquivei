@@ -1,18 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component show shortcut button render Link changes the class when hovered 1`] = `
-<div
-  className="BtnShortcut"
->
-  <button
-    className="ui massive blue button"
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  />
-</div>
-`;
-
-exports[`Component show shortcut button render render with show = false render with mouse event 1`] = `
+exports[`Component show shortcut button render render with show = false test snapshot 1`] = `
 <div
   className="BtnShortcut"
 >

@@ -38,14 +38,39 @@ describe('Component show shortcut button render', () => {
             expect(component.length).toBe(0);
         });
 
-        it('render with mouse event', () => {
-            const tree = renderer.create(<BtnShortcut/>).toJSON();
+        it('test snapshot', () => {
+            const tree = renderer.create(<BtnShortcut />).toJSON();
 
             expect(tree).toMatchSnapshot();
         });
 
-
     });
+
+    // describe('Component show shortcut button render', () => {
+
+    //     it('render with mouse event', () => {
+
+    //         var onMouseSpy = jest.fn();
+    //         jest
+    //             .spyOn(BtnShortcut.prototype, 'onMouse')
+    //             .mockImplementation(onMouseSpy);
+
+    //         let wrapper = setUp();
+    //         //let instance = wrapper.instance();
+
+    //         expect(onMouseSpy).toHaveBeenCalled();
+
+    //         // let component = wrapper.find('.BtnShortcutPrice');
+    //         // expect(component.length).toBe(0);
+
+    //         // instance.onMouse(true);
+
+    //         // component = wrapper.find('.BtnShortcutPrice');
+    //         // expect(component.length).toBe(1);
+    //     });
+
+
+    // });
 
 
     describe('Checking PropTypes', () => {
