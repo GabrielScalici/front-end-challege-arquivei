@@ -58,7 +58,7 @@ class Perfil extends Component {
                 <div>
                     <Tabs defaultActiveKey="perfil" id="uncontrolled-tab-example">
                         <Tab eventKey="perfil" title="Perfil">
-                            <div class="ui segment">
+                            <div className="ui segment">
                                 <DividerLine icon="user" title="Usuário Cadastrado" />
                                 <UserRegister />
                             </div>
@@ -66,7 +66,7 @@ class Perfil extends Component {
                             <FormPerfil />
                         </Tab>
                         <Tab eventKey="card" title="Cartões">
-                            <div class="ui segment">
+                            <div className="ui segment">
                                 <DividerLine icon="user" title="Cartão Cadastrado" />
                                 <CardRegister />
                             </div>

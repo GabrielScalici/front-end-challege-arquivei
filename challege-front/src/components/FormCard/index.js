@@ -6,6 +6,7 @@ import { db } from '../../utils/firebase';
 
 //COMPONENTES
 import CardUser from '../CardUser';
+import { isnum } from '../IsNum';
 
 //REDUX
 import { connect } from 'react-redux';
@@ -19,17 +20,22 @@ import './FormCard.css';
 const FormCard = (props) => {
 
     function addCard() {
-        //ADICIONANDO NO BANCO DE DADOS FIREBASE
-        db.ref('/CARD').push({
-            NAME: props.name_card,
-            NUM: props.num_card,
-            VALID: props.valid_card,
-            CVV: props.cvv_card,
-        });
 
-        //ALERTA SIMPLES DE CONCLUSÃO
-        alert("Cartão cadastrado com sucesso!");
-        props.modificaSaveCard(true);
+        if(isnum( props.cvv_card)){
+            //ADICIONANDO NO BANCO DE DADOS FIREBASE
+            db.ref('/CARD').push({
+                NAME: props.name_card,
+                NUM: props.num_card,
+                VALID: props.valid_card,
+                CVV: props.cvv_card,
+            });
+    
+            //ALERTA SIMPLES DE CONCLUSÃO
+            alert("Cartão cadastrado com sucesso!");
+            props.modificaSaveCard(true);
+        }else{
+            alert("Digite somente numero no cvv")
+        }
 
     }
 
@@ -72,6 +78,7 @@ const FormCard = (props) => {
                                         <input type="text" name="código" placeholder="CVV" value={props.cvv_card}
                                             onChange={text => {
                                                 props.modificaCvvCard(text.target.value)
+
                                             }}
                                         />
                                     </div>

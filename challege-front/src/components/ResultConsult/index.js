@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card, Container, Alert } from 'react-bootstrap';
 
 
 //REDUX
@@ -12,12 +11,12 @@ export const ResultConsult = (props) => {
 
     return (
         <div>
-            <div class="ui card">
-                <a class="image" href={props.photo_consult}>
+            <div className="ui card">
+                <a className="image" href={props.photo_consult}>
                     <img src={props.photo_consult} />
                 </a>
-                <div class="content">
-                <a class="header">{props.name_consult}</a>
+                <div className="content">
+                <a className="header">{props.name_consult}</a>
                 </div>
             </div>
         </div>

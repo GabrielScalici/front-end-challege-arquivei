@@ -15,10 +15,10 @@ import '../../Styles.css';
 const CardRegister = (props) => {
     if (props.name_card === '' && props.num_card === '' && props.valid_card === '' && props.cvv_card === '') {
         return (
-            <div class="ui horizontal huge list">
-                <div class="item">
+            <div className="ui horizontal huge list">
+                <div className="item">
                     <img alt="NoneAvatar" class="ui avatar image" src={none} />
-                    <div class="content">
+                    <div className="content">
                         Não há nenhum cartão cadastrado
                     </div>
                 </div>
@@ -27,11 +27,11 @@ const CardRegister = (props) => {
     }
 
     return (
-        <div class="ui horizontal huge list">
-            <div class="item">
-                <img alt="Avatar" class="ui avatar image" src={card} />
-                <div class="content">
-                    <div class="header"> {props.num_card} </div>
+        <div className="ui horizontal huge list">
+            <div className="item">
+                <img alt="Avatar" className="ui avatar image" src={card} />
+                <div className="content">
+                    <div className="header"> {props.num_card} </div>
                     {props.name_card}
                 </div>
                 <div className="ui pointing red basic label">

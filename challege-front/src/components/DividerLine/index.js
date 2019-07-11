@@ -4,7 +4,7 @@ import '../../Styles.css';
 const DividerLine = (props) => {
     if(props.simple){
         return(
-            <div class="ui divider"></div>
+            <div className="ui divider"></div>
         );
     }
     
