@@ -34,9 +34,6 @@ const CardRegister = (props) => {
                     <div className="header"> {props.num_card} </div>
                     {props.name_card}
                 </div>
-                <div className="ui pointing red basic label">
-                    {/* {if(props.save_card) ? "" : "Você precisa salvar ainda"} */}
-                </div>
             </div>
         </div>
     );

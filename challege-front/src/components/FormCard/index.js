@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 //FIREBASE
@@ -7,6 +7,7 @@ import { db } from '../../utils/firebase';
 //COMPONENTES
 import CardUser from '../CardUser';
 import { isnum } from '../IsNum';
+import TitleContainer from '../TitleContainer';
 
 //REDUX
 import { connect } from 'react-redux';
@@ -19,33 +20,41 @@ import './FormCard.css';
 
 const FormCard = (props) => {
 
+    const [error_cvv, setCvv] = useState(false);
+    const [error_name, setName] = useState(false);
+    const [error_num, setNum] = useState(false);
+    const [error_valid, setValid] = useState(false);
+
     function addCard() {
 
-        if(isnum( props.cvv_card)){
-            //ADICIONANDO NO BANCO DE DADOS FIREBASE
-            db.ref('/CARD').push({
-                NAME: props.name_card,
-                NUM: props.num_card,
-                VALID: props.valid_card,
-                CVV: props.cvv_card,
-            });
-    
-            //ALERTA SIMPLES DE CONCLUSÃO
-            alert("Cartão cadastrado com sucesso!");
-            props.modificaSaveCard(true);
-        }else{
-            alert("Digite somente numero no cvv")
+        if(props.cvv_card === '' || props.name_card === '' || props.num_card === '' || props.num_card === ''){
+            alert("Por favor, não deixe campos em branco");
+            return false;
         }
+        //ADICIONANDO NO BANCO DE DADOS FIREBASE
+        db.ref('/CARD').push({
+            NAME: props.name_card,
+            NUM: props.num_card,
+            VALID: props.valid_card,
+            CVV: props.cvv_card,
+        });
+
+        //ALERTA SIMPLES DE CONCLUSÃO
+        alert("Cartão cadastrado com sucesso!");
+        props.modificaSaveCard(true);
 
     }
 
     return (
         <div>
-            <p className="primary title-text-rubik"> Informações de pagamento </p>
+            <TitleContainer title="Informações de pagamento" />
             <Container className="Container-form" >
                 <Row>
                     <Col sm={12} md={6} >
-                        <form className="ui form">
+                        <form className="ui form" onSubmit={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }}>
                             <div className="field">
                                 <label className="roboto dark" >Nome</label>
                                 <input type="text" name="name" placeholder="Nome escrito no cartão" value={props.name_card}
@@ -67,9 +76,6 @@ const FormCard = (props) => {
                                                 props.modificaValidCard(text.target.value)
                                             }}
                                         />
-                                        <div className="ui pointing red basic label">
-                                            Não precisa digitar a barra
-                                        </div>
                                     </div>
                                 </Col>
                                 <Col>

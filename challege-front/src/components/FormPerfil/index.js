@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 
 //COMPONENTES
-//import check_cnpj from '../CheckCnpj';
+import TitleContainer from '../TitleContainer';
 
 //FIREBASE
 import { db } from '../../utils/firebase';
@@ -19,6 +19,10 @@ import '../../Styles.css';
 const FormPerfil = (props) => {
 
     function addUser(cnpj) {
+        if (props.name_user === '' || props.cnpj_user === '' || props.email_user === '') {
+            alert("Por favor, não deixe campos em branco");
+            return false;
+        }
         //ADICIONANDO NO BANCO DE DADOS FIREBASE
         db.ref('/USER').push({
             NAME: props.name_user,
@@ -32,13 +36,16 @@ const FormPerfil = (props) => {
 
     return (
         <div>
-            <p className="primary title-text-rubik"> Informações pessoais </p>
+            <TitleContainer title="Informações Pessoais" />
             <Container className="Container-form" >
-                <form className="ui form">
+                <form className="ui form" onSubmit={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }}>
                     <div className="field">
                         <label className="roboto dark">Nome</label>
                         <input type="text" name="name" placeholder="Nome Completo" value={props.name_user}
-                            onChange={text => props.modificaNameUser(text.target.value.toLowerCase())}
+                            onChange={text => props.modificaNameUser(text.target.value.toUpperCase())}
                         />
                     </div>
                     <div className="field">
